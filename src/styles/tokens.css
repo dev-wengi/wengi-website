@@ -1,0 +1,159 @@
+:root {
+  /* ==========================================================================
+     GLOBAL COLOR TOKENS
+     ========================================================================== */
+  --bg-dark: #1E1E1E;           /* main dark section background */
+  --bg-darker: #151515;         /* footers, overlays */
+  --surface-light: #FFFFFF;     /* rounded white cards */
+  --page-light: #F2F2F2;        /* page background behind cards */
+  --green-neon: #6CF05A;
+  --green-brand: #6CF05A;
+  --green-deep: #6CF05A;
+  --text-on-dark: #FFFFFF;
+  --text-muted-dark: #A8A8A8;
+  --text-on-light: #1A1A1A;
+  --text-muted-light: #8C8C8C;
+
+  /* Section 1: Dev.wengi Light Brand Extension Tokens */
+  --green-highlight: #6CF05A;
+  --green-button: #6CF05A;
+  --green-button-hover: #6CF05A;
+  --nav-pill-bg: #F3F4F6;       /* center nav capsule */
+  --stats-bg: rgba(70, 70, 70, 0.94); /* floating stats panel */
+  --stats-border: rgba(255, 255, 255, 0.18);
+  --text-black: #0A0A0A;
+
+  /* Section 2: Vision & Mission Dark Tokens */
+  --bg-black: #000000;          /* Vision section background */
+  --green-cta-light: #6CF05A;
+  --mission-overlay: linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(108,240,90,0.75) 45%, rgba(108,240,90,0.85) 100%);
+
+  /* Section 3: Projects Tokens */
+  --bg-gray: #E2E2E2;           /* section background */
+  --card-white: #FFFFFF;
+  --chip-border: #1A1A1A;
+  --green-live: #6CF05A;
+
+  /* Section 4: F.A.Qs Dark Tokens */
+  --faq-border: #6CF05A;
+  --faq-dot: #FFFFFF;           /* the dot after each number */
+
+  /* Section 5: Contact & Newsletter Tokens */
+  --contact-icon-bg: #6CF05A;   /* icon tile */
+  --divider-dark: #111111;      /* thin vertical separators */
+  --card-border-gray: #9A9A9A;  /* border of the newsletter card */
+  --watermark-opacity: 0.10;
+
+  /* Section 6: Footer Tokens */
+  --footer-blue:      #000000;  /* footer background */
+  --footer-blue-deep: #000000;  /* hover/pressed states */
+  --footer-ink:       #FFFFFF;  /* main text on dark */
+  --footer-muted:     rgba(255,255,255,0.72); /* secondary text */
+  --footer-line:      rgba(255,255,255,0.25); /* borders/dividers */
+  --footer-label:     #6CF05A;  /* = --green-highlight, small uppercase labels */
+  --pixel-above-bg:   #FFFFFF;  /* page colour directly above the footer */
+
+  /* Gradients & Shadows */
+  --gradient-brand: linear-gradient(135deg, #6CF05A 0%, #6CF05A 100%);
+  --shadow-card-light: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+  --shadow-card-dark: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  /* Typography Font Families */
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-headline: "Inter", "Inter Tight", sans-serif;
+  --font-display: "Oswald", "Roboto Condensed", sans-serif;
+  --font-heading: "Onest", sans-serif;
+  --font-numeral: "Exo 2", sans-serif;
+  --font-body: "Inter", "Onest", sans-serif;
+
+  /* Layout & Spacing */
+  --content-max-width: 1280px;
+  --radius-card-sm: 24px;
+  --radius-card: 32px;
+  --radius-card-lg: 40px;
+  --radius-btn-pill: 9999px;
+  --radius-btn: 12px;
+}
+
+/* ==========================================================================
+   UTILITY TOKEN CLASSES
+   ========================================================================== */
+
+/* Colors */
+.bg-dark { background-color: var(--bg-dark); }
+.bg-darker { background-color: var(--bg-darker); }
+.bg-surface-light { background-color: var(--surface-light); }
+.bg-page-light { background-color: var(--page-light); }
+.bg-green-brand { background-color: var(--green-brand); }
+.bg-green-neon { background-color: var(--green-neon); }
+.bg-green-deep { background-color: var(--green-deep); }
+.bg-gradient-brand { background: var(--gradient-brand); }
+
+/* Section 1, 2 & 3 Brand Extension Tokens */
+.bg-black-solid { background-color: var(--bg-black); }
+.bg-green-cta-light { background-color: var(--green-cta-light); }
+.bg-mission-overlay { background: var(--mission-overlay); }
+.bg-gray-section { background-color: var(--bg-gray); }
+.bg-card-white { background-color: var(--card-white); }
+.bg-green-live { background-color: var(--green-live); }
+.border-chip { border-color: var(--chip-border); }
+.border-faq { border-color: var(--faq-border); }
+.bg-faq-dot { background-color: var(--faq-dot); }
+.bg-green-button { background-color: var(--green-button); }
+.bg-green-button-hover { background-color: var(--green-button-hover); }
+.bg-nav-pill { background-color: var(--nav-pill-bg); }
+.bg-stats { background-color: var(--stats-bg); }
+.border-stats { border-color: var(--stats-border); }
+
+.text-green-highlight { color: var(--green-highlight); }
+.text-green-cta-light { color: var(--green-cta-light); }
+.text-green-button { color: var(--green-button); }
+.text-black { color: var(--text-black); }
+
+.text-green-neon { color: var(--green-neon); }
+.text-green-brand { color: var(--green-brand); }
+.text-green-deep { color: var(--green-deep); }
+.text-on-dark { color: var(--text-on-dark); }
+.text-muted-dark { color: var(--text-muted-dark); }
+.text-on-light { color: var(--text-on-light); }
+.text-muted-light { color: var(--text-muted-light); }
+
+.border-green-neon { border-color: var(--green-neon); }
+.border-green-brand { border-color: var(--green-brand); }
+.border-green-deep { border-color: var(--green-deep); }
+
+/* Decorative vertical grid lines (green or white at 15% opacity) */
+.grid-line-white {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.grid-line-green {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(108, 240, 90, 0.15);
+}
+
+/* Duotone image filter */
+.duotone-green {
+  position: relative;
+  overflow: hidden;
+}
+
+.duotone-green img {
+  filter: grayscale(100%) contrast(1.15);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.duotone-green::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--green-highlight);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}

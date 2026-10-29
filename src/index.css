@@ -1,1 +1,73 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
+
+@theme {
+  --color-bg-dark: #1E1E1E;
+  --color-bg-darker: #151515;
+  --color-surface-light: #FFFFFF;
+  --color-page-light: #F2F2F2;
+  --color-green-neon: #6CF05A;
+  --color-green-brand: #6CF05A;
+  --color-green-deep: #6CF05A;
+  --color-text-on-dark: #FFFFFF;
+  --color-text-muted-dark: #A8A8A8;
+  --color-text-on-light: #1A1A1A;
+  --color-text-muted-light: #8C8C8C;
+
+  /* Section 1 Light Tokens */
+  --color-green-highlight: #6CF05A;
+  --color-green-button: #6CF05A;
+  --color-green-button-hover: #6CF05A;
+  --color-nav-pill-bg: #F3F4F6;
+  --color-stats-bg: rgba(70, 70, 70, 0.94);
+  --color-stats-border: rgba(255, 255, 255, 0.18);
+  --color-text-black: #0A0A0A;
+
+  /* Section 2 Dark Tokens */
+  --color-bg-black: #000000;
+  --color-green-cta-light: #6CF05A;
+
+  /* Section 3 Projects Tokens */
+  --color-bg-gray: #E2E2E2;
+  --color-card-white: #FFFFFF;
+  --color-chip-border: #1A1A1A;
+  --color-green-live: #6CF05A;
+
+  /* Section 4 FAQ Tokens */
+  --color-faq-border: #6CF05A;
+  --color-faq-dot: #FFFFFF;
+
+  /* Section 6 Footer Tokens */
+  --color-footer-blue: #000000;
+  --color-footer-blue-deep: #000000;
+  --color-footer-ink: #FFFFFF;
+  --color-footer-label: #6CF05A;
+
+  --font-inter: "Inter", sans-serif;
+  --font-headline: "Inter", "Inter Tight", sans-serif;
+  --font-exo: "Exo 2", sans-serif;
+  --font-display: "Oswald", "Roboto Condensed", sans-serif;
+  --font-heading: "Onest", sans-serif;
+  --font-numeral: "Exo 2", sans-serif;
+  --font-body: "Inter", "Onest", sans-serif;
+  --font-sans: "Inter", "Onest", sans-serif;
+
+  --radius-card-sm: 24px;
+  --radius-card: 32px;
+  --radius-card-lg: 40px;
+  --radius-hero-img: 36px;
+  --radius-stats-panel: 24px;
+}
+
+@import "./styles/tokens.css";
+@import "./styles/typography.css";
+@import "./styles/animations.css";
+
+/* Base HTML resets ensuring proper font inheritance and background */
+html {
+  font-family: var(--font-body);
+  background-color: #FFFFFF;
+  color: var(--text-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

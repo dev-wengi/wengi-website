@@ -1,0 +1,55 @@
+/* ==========================================================================
+   ANIMATIONS & TRANSITION SYSTEM
+   ========================================================================== */
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hover transitions */
+.btn-hover-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.btn-hover-lift:active {
+  transform: translateY(0);
+}
+
+/* Glow Blobs */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(120px);
+  will-change: filter, transform;
+}
+
+/* Custom scrollbar matching dark aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #151515;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6CF05A;
+}
