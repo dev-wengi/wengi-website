@@ -30,6 +30,10 @@ export default {
 
         // Section 2: Vision & Mission Dark Tokens
         'bg-black': 'var(--bg-black, #000000)',
+        'pixel-light': 'var(--pixel-light, #F2F2F2)',
+        'pixel-dark': 'var(--pixel-dark, #000000)',
+        'pixel-digit': 'var(--pixel-digit, #9A9A9A)',
+        'pixel-glow': 'var(--pixel-glow, rgba(108, 240, 90, 0.35))',
         'green-cta-light': 'var(--green-cta-light, #6CF05A)',
 
         // Section 3: Projects Tokens

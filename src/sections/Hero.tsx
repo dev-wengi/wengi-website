@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { StatsBar, type StatItem } from '../components/StatsBar'
+import { PixelMosaicBackground } from '../components/PixelMosaicBackground'
 
 export interface HeroProps {
   headlinePart1?: string
@@ -95,10 +96,12 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section
-      className={`w-full bg-white pt-10 sm:pt-14 md:pt-18 lg:pt-20 pb-20 overflow-hidden ${className}`}
+      className={`relative isolate hero-mosaic-section w-full bg-[var(--pixel-light,#F2F2F2)] pb-20 overflow-hidden ${className}`}
       aria-label="Introduction and community overview"
+      style={{ touchAction: 'pan-y' }}
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <PixelMosaicBackground />
+      <div className="relative z-[1] max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
           variants={containerVariants}
           initial="hidden"

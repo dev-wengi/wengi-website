@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         className={`sticky top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           isScrolled
             ? 'bg-white/85 backdrop-blur-md shadow-sm border-b border-black/5 py-4'
-            : 'bg-white py-6'
+            : 'bg-transparent py-6'
         } ${className}`}
       >
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">

@@ -25,6 +25,10 @@
 
   /* Section 2 Dark Tokens */
   --color-bg-black: #000000;
+  --color-pixel-light: var(--pixel-light, #F2F2F2);
+  --color-pixel-dark: var(--pixel-dark, #000000);
+  --color-pixel-digit: var(--pixel-digit, #9A9A9A);
+  --color-pixel-glow: var(--pixel-glow, rgba(108, 240, 90, 0.35));
   --color-green-cta-light: #6CF05A;
 
   /* Section 3 Projects Tokens */
@@ -62,6 +66,39 @@
 @import "./styles/tokens.css";
 @import "./styles/typography.css";
 @import "./styles/animations.css";
+
+:root {
+  --hero-nav-height: 95px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --hero-nav-height: 111px;
+  }
+}
+
+.hero-mosaic-section {
+  margin-top: calc(-1 * var(--hero-nav-height));
+  padding-top: calc(var(--hero-nav-height) + 2.5rem);
+}
+
+@media (min-width: 640px) {
+  .hero-mosaic-section {
+    padding-top: calc(var(--hero-nav-height) + 3.5rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-mosaic-section {
+    padding-top: calc(var(--hero-nav-height) + 4.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-mosaic-section {
+    padding-top: calc(var(--hero-nav-height) + 5rem);
+  }
+}
 
 /* Base HTML resets ensuring proper font inheritance and background */
 html {
