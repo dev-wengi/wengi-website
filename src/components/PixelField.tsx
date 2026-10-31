@@ -303,6 +303,7 @@ export const PixelField: React.FC<PixelFieldProps> = ({
       ro.disconnect()
       io.disconnect()
       stopAutonomous()
+      builtPatternRef.current = null
       physicsRef.current?.destroy()
     }
   }, [buildPattern, onPointerMove, onPointerLeave, updateRect, startAutonomous, stopAutonomous])
