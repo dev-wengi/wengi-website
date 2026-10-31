@@ -5,7 +5,6 @@ interface ProcessStepProps {
   step: ProcessStepData
   station: PathStation
   active: boolean
-  layout: 'desktop' | 'mobile'
   stepIndex: number
 }
 
@@ -13,22 +12,17 @@ export function ProcessStep({
   step,
   station,
   active,
-  layout,
   stepIndex,
 }: ProcessStepProps) {
-  const isCrest = layout === 'desktop' && stepIndex % 2 === 1
-  const isRightmost = layout === 'desktop' && stepIndex === 3
-  const desktopPosition =
-    layout === 'desktop' ? pathStationPercent(station) : undefined
+  const isCrest = stepIndex % 2 === 1
+  const isRightmost = stepIndex === 3
 
   return (
     <li
-      className={
-        layout === 'desktop'
-          ? 'process-step process-step--desktop'
-          : 'process-step process-step--mobile'
-      }
-      style={desktopPosition}
+      className={`process-step ${isCrest ? 'process-step--crest' : ''} ${
+        isRightmost ? 'process-step--right' : ''
+      }`}
+      style={pathStationPercent(station)}
     >
       <span
         aria-hidden="true"
@@ -37,33 +31,19 @@ export function ProcessStep({
       />
 
       <span
-        className={`process-step__index ${active ? 'process-step__index--active' : ''} ${
-          isCrest ? 'process-step__index--crest' : ''
-        } ${isRightmost ? 'process-step__index--right' : ''}`}
+        className={`process-step__index ${active ? 'process-step__index--active' : ''}`}
       >
         {step.index}
       </span>
 
       <div
-        className={`process-step__copy ${
-          active ? 'process-step__copy--active' : ''
-        } ${isCrest ? 'process-step__copy--crest' : ''} ${
-          isRightmost ? 'process-step__copy--right' : ''
-        }`}
+        className={`process-step__copy ${active ? 'process-step__copy--active' : ''}`}
       >
         <h3>{step.title}</h3>
         <p>{step.description}</p>
       </div>
 
-      {step.note && (
-        <span
-          className={`process-step__note ${
-            isRightmost || stepIndex === 1 ? 'process-step__note--left' : ''
-          }`}
-        >
-          {step.note}
-        </span>
-      )}
+      {step.note && <span className="process-step__note">{step.note}</span>}
     </li>
   )
 }
