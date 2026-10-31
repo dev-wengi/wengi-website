@@ -57,7 +57,7 @@ export const Faqs: React.FC<FaqsProps> = ({
     <section
       id="faqs"
       aria-labelledby="faqs-heading"
-      className={`w-full scroll-mt-28 pt-16 pb-20 px-6 overflow-hidden ${className}`}
+      className={`w-full scroll-mt-24 pt-16 pb-20 px-6 overflow-hidden ${className}`}
       style={{ backgroundColor: 'var(--bg-black, #000000)' }}
     >
       <div className="max-w-[940px] mx-auto w-full">

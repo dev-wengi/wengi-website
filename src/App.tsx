@@ -1,9 +1,10 @@
 import React from 'react'
-import { Navbar } from './components/Navbar'
+import { SiteNavbar } from './components/SiteNavbar'
 import { Hero } from './sections/Hero'
+import { Vision } from './sections/Vision'
 import { LearningPaths } from './sections/LearningPaths'
 import { Projects } from './sections/Projects'
-import { HowItWorks } from './sections/HowItWorks'
+import { ProcessPath } from './sections/ProcessPath'
 import { Faqs } from './sections/Faqs'
 import { Contact } from './sections/Contact'
 import { FooterSection } from './sections/Footer'
@@ -11,13 +12,14 @@ import { FooterSection } from './sections/Footer'
 export const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-[var(--text-black,#0A0A0A)] flex flex-col selection:bg-[var(--green-highlight,#6CF05A)] selection:text-black">
-      {/* Section 1: Sticky Navbar */}
-      <Navbar />
+      <SiteNavbar />
 
       {/* Main Page Sections */}
       <main className="flex-1">
         {/* Section 1: Hero */}
         <Hero />
+
+        <Vision />
 
         {/* Learning paths and coding challenges */}
         <LearningPaths />
@@ -26,7 +28,7 @@ export const App: React.FC = () => {
         <Projects />
 
         {/* How to get started */}
-        <HowItWorks />
+        <ProcessPath />
 
         {/* Frequently asked questions */}
         <Faqs />

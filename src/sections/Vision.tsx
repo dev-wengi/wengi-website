@@ -51,7 +51,7 @@ export const Vision: React.FC<VisionProps> = ({
     <section
       id="vision"
       aria-labelledby="vision-heading"
-      className={`w-full pt-20 pb-28 sm:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
+      className={`w-full scroll-mt-24 pt-20 pb-28 sm:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
       style={{ backgroundColor: 'var(--bg-black, #000000)' }}
     >
       <div className="max-w-[1280px] mx-auto">

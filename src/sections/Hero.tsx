@@ -96,7 +96,8 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section
-      className={`relative isolate hero-mosaic-section w-full bg-[var(--pixel-light,#F2F2F2)] pb-20 overflow-hidden ${className}`}
+      id="home"
+      className={`relative isolate hero-mosaic-section w-full scroll-mt-24 bg-[var(--pixel-light,#F2F2F2)] pb-20 overflow-hidden ${className}`}
       aria-label="Introduction and community overview"
       style={{ touchAction: 'pan-y' }}
     >

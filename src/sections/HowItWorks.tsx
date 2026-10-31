@@ -26,10 +26,11 @@ const STEPS = [
 
 export const HowItWorks: React.FC = () => (
   <section
-    id="how-it-works"
+    id="start"
     aria-labelledby="how-it-works-heading"
-    className="w-full scroll-mt-28 bg-[#F2F2F2] px-4 py-20 sm:px-6 lg:py-24"
+    className="w-full scroll-mt-24 bg-[#F2F2F2] px-4 py-20 sm:px-6 lg:py-24"
   >
+    <span id="how-it-works" aria-hidden="true" className="block h-0 scroll-mt-24" />
     <div className="mx-auto grid w-full max-w-[1160px] gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
       <div>
         <p className="mb-3 font-exo text-xs font-semibold uppercase tracking-[0.18em] text-[var(--green-highlight,#6CF05A)]">

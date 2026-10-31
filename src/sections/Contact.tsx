@@ -91,7 +91,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className={`w-full scroll-mt-28 ${className}`}
+      className={`w-full scroll-mt-24 ${className}`}
     >
       {/* ── A) Black Banner ────────────────────────────────────────────────── */}
       <div
