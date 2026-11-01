@@ -77,7 +77,10 @@ export const SiteNavbar = () => {
             aria-label="Dev.wengi Home"
             className="relative z-20 shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-button)] focus-visible:ring-offset-[3px]"
           >
-            <Logo imgClassName="block h-10 w-auto object-contain sm:h-12" />
+            <Logo
+              variant="stacked"
+              imgClassName="block h-12 w-auto object-contain sm:h-16"
+            />
           </a>
           <NavItems
             items={navItems}
@@ -100,7 +103,10 @@ export const SiteNavbar = () => {
               aria-label="Dev.wengi Home"
               className="relative z-20 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-button)] focus-visible:ring-offset-[3px]"
             >
-              <Logo imgClassName="block h-10 w-auto object-contain" />
+              <Logo
+                variant="stacked"
+                imgClassName="block h-12 w-auto object-contain"
+              />
             </a>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}

@@ -7,7 +7,7 @@
  *  A) PixelField — pixel edge sits in reserved space above the footer
  *  B) Editorial header row — numbered label, large thin heading, 2 text blocks
  *  C) Footer links — brand | Company | Resources | Community | Follow + Newsletter
- *  D) Bottom bar — copyright | legal links | Made with ♥
+ *  D) Bottom bar — copyright | legal links
  *
  * All other elements: Framer Motion whileInView fade+slideUp, stagger 0.08s.
  * prefers-reduced-motion: skip all motion.
@@ -44,23 +44,6 @@ const staggerContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08 } },
 }
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-/** Heart SVG (inline, footer-label colour) */
-const HeartIcon = () => (
-  <svg
-    width="14"
-    height="14"
-    viewBox="0 0 14 14"
-    fill="currentColor"
-    aria-label="love"
-    role="img"
-    style={{ color: 'var(--footer-label, #6CF05A)', display: 'inline', verticalAlign: 'middle' }}
-  >
-    <path d="M7 12.5S1 8.5 1 4.5A3.5 3.5 0 017 2.58 3.5 3.5 0 0113 4.5c0 4-6 8-6 8z" />
-  </svg>
-)
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -115,25 +98,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 
       {/* ── A) EDITORIAL HEADER ROW ───────────────────────────────────────── */}
       <div className="relative z-10 max-w-[1280px] mx-auto w-full px-6 pt-14 sm:pt-16 lg:pt-20">
-        {/* Top meta labels */}
-        <motion.div
-          className="flex items-center justify-between mb-8 sm:mb-10"
-          {...animProps(0)}
-        >
-          <span
-            className="font-exo font-normal text-[12px] uppercase tracking-[0.14em]"
-            style={{ color: 'var(--footer-label, #6CF05A)' }}
-          >
-            [ 06 ]
-          </span>
-          <span
-            className="font-exo font-normal text-[12px] uppercase tracking-[0.14em]"
-            style={{ color: 'var(--footer-label, #6CF05A)' }}
-          >
-            Get in Touch
-          </span>
-        </motion.div>
-
         {/* Large thin heading */}
         <motion.div className="mb-12 sm:mb-14" {...animProps(0.06)}>
           <h2
@@ -167,21 +131,15 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             custom={0}
           >
             <Logo
-              theme="onBlue"
+              variant="horizontal"
               alt="Dev.wengi"
               imgClassName="h-10 w-auto object-contain block"
             />
             <p
-              className="font-sans font-normal text-[15px] leading-relaxed"
-              style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
+              className="font-sans font-normal text-[13px] leading-relaxed"
+              style={{ color: 'var(--footer-muted, rgba(255,255,255,0.52))' }}
             >
               Learn to code by building real projects with real people.
-            </p>
-            <p
-              className="font-sans font-normal text-[15px] leading-relaxed -mt-3"
-              style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
-            >
-              Follow a track, take on a challenge, and learn with the community.
             </p>
           </motion.div>
 
@@ -274,14 +232,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               </React.Fragment>
             ))}
           </nav>
-
-          {/* Made with ♥ */}
-          <p
-            className="font-sans font-normal text-[15px] flex items-center gap-1.5"
-            style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
-          >
-            Made with <HeartIcon />
-          </p>
         </motion.div>
       </div>
     </footer>
