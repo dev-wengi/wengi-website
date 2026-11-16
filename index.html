@@ -48,6 +48,20 @@
       <input type="email" name="email" />
       <input type="text" name="bot-field" />
     </form>
+    <form name="join-request" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="join-request" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="city" />
+      <input type="text" name="level" />
+      <input type="text" name="path" />
+      <textarea name="goal"></textarea>
+      <input type="text" name="portfolio" />
+      <input type="checkbox" name="expectations" />
+      <input type="checkbox" name="data-use" />
+      <input type="checkbox" name="newsletter" />
+      <input type="text" name="bot-field" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
