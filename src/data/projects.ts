@@ -4,6 +4,7 @@ export interface Project {
   description: string
   image: string
   imageAlt: string
+  /** Repository URL. Empty when the project has no public repo yet. */
   liveUrl: string
   category: string[]
   tags: string[]
@@ -29,7 +30,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Explore a dashboard for tracking product activity and key metrics.',
     image: images.dashboard,
     imageAlt: 'Analytics dashboard interface with charts',
-    liveUrl: 'https://example.com',
+    liveUrl: '',
     category: ['Frontend'],
     tags: ['Dashboard', 'Metrics', 'Charts'],
   },
@@ -39,7 +40,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Build a background worker that processes jobs in a reliable queue.',
     image: images.servers,
     imageAlt: 'Server racks in a data center',
-    liveUrl: 'https://example.com',
+    liveUrl: '',
     category: ['Backend'],
     tags: ['Background jobs', 'Processing'],
   },
@@ -49,7 +50,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Organize team work with a board for tasks, owners, and progress.',
     image: images.whiteboard,
     imageAlt: 'Team planning around a whiteboard',
-    liveUrl: 'https://example.com',
+    liveUrl: '',
     category: ['Fullstack'],
     tags: ['Task management', 'Drag and drop'],
   },
@@ -59,7 +60,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Create an API for sign-in, user sessions, and protected routes.',
     image: images.code,
     imageAlt: 'Close-up of programming code',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://github.com/dev-wengi/auth-api',
     category: ['Backend'],
     tags: ['Authentication', 'JWT', 'API'],
   },
@@ -69,7 +70,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Design a clear sign-in experience with accessible form states.',
     image: images.monitor,
     imageAlt: 'Code displayed on a computer monitor',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://github.com/dev-wengi/auth-app',
     category: ['Frontend'],
     tags: ['Frontend', 'Authentication'],
   },
@@ -79,7 +80,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Build a real-time chat interface for conversations and messages.',
     image: images.chat,
     imageAlt: 'Group of people messaging on smartphones',
-    liveUrl: 'https://example.com',
+    liveUrl: '',
     category: ['Frontend'],
     tags: ['Frontend', 'Real-time chat'],
   },
@@ -89,7 +90,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Connect clients to a real-time chat service over WebSockets.',
     image: images.rack,
     imageAlt: 'Server rack cabling close-up',
-    liveUrl: 'https://example.com',
+    liveUrl: '',
     category: ['Backend'],
     tags: ['Backend', 'WebSockets'],
   },
@@ -99,7 +100,7 @@ export const PROJECTS_DATA: Project[] = [
     description: 'Handle file uploads with validation and cloud storage.',
     image: images.desk,
     imageAlt: 'Laptop on a wooden desk workspace',
-    liveUrl: 'https://example.com',
+    liveUrl: '',
     category: ['Backend'],
     tags: ['File uploads', 'Storage', 'API'],
   },

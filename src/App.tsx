@@ -10,6 +10,7 @@ import { Blog } from './pages/Blog'
 import { Article } from './pages/Article'
 import { About } from './pages/About'
 import { GetStarted } from './pages/GetStarted'
+import { Legal } from './pages/Legal'
 import { NotFound } from './pages/NotFound'
 
 const SiteLayout: React.FC = () => (
@@ -34,6 +35,7 @@ export const App: React.FC = () => (
         <Route path="blog/:slug" element={<Article />} />
         <Route path="about" element={<About />} />
         <Route path="get-started" element={<GetStarted />} />
+        <Route path=":slug" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
