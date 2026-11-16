@@ -4,6 +4,8 @@ import { SiteNavbar } from './components/SiteNavbar'
 import { FooterSection } from './sections/Footer'
 import { ScrollManager } from './components/ScrollManager'
 import { Home } from './pages/Home'
+import { Resources } from './pages/Resources'
+import { BriefDetail } from './pages/BriefDetail'
 import { NotFound } from './pages/NotFound'
 
 const SiteLayout: React.FC = () => (
@@ -22,6 +24,8 @@ export const App: React.FC = () => (
     <Routes>
       <Route element={<SiteLayout />}>
         <Route index element={<Home />} />
+        <Route path="resources" element={<Resources />} />
+        <Route path="resources/brief/:id" element={<BriefDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
