@@ -62,22 +62,22 @@ const CONTACT_ITEMS = [
     id: 'phone',
     icon: <PhoneIcon />,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '0768 476 144',
+    href: 'tel:+254768476144',
   },
   {
     id: 'email',
     icon: <EmailIcon />,
     label: 'Email',
-    value: 'hello@dev.wengi.io',
-    href: 'mailto:hello@dev.wengi.io',
+    value: 'dev.wengi.ke@gmail.com',
+    href: 'mailto:dev.wengi.ke@gmail.com',
   },
   {
     id: 'location',
     icon: <LocationIcon />,
     label: 'Location',
-    value: 'Nairobi, Kenya',
-    href: 'https://maps.google.com/?q=Nairobi,Kenya',
+    value: 'Kisumu, Kenya',
+    href: 'https://maps.google.com/?q=Kisumu,Kenya',
   },
 ]
 
@@ -152,7 +152,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
 
           {/* CTA Button */}
           <motion.a
-            href="mailto:hello@dev.wengi.io"
+            href="mailto:dev.wengi.ke@gmail.com"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
