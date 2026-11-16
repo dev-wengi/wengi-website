@@ -15,7 +15,7 @@ export interface FooterNewsletterProps {
 
 export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = '' }) => {
   const { email, setEmail, status, errorMessage, inputRef, handleSubmit } =
-    useNewsletterForm()
+    useNewsletterForm('footer-newsletter')
 
   const isSuccess = status === 'success'
   const isLoading = status === 'loading'
@@ -44,16 +44,21 @@ export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = 
         ) : (
           <motion.form
             key="form"
+            name="footer-newsletter"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
             noValidate
             aria-label="Newsletter subscription"
             className="flex flex-col gap-2"
             initial={{ opacity: 1 }}
           >
+            <input type="hidden" name="form-name" value="footer-newsletter" />
             {/* Honeypot — hidden from humans */}
             <input
               type="text"
-              name="_gotcha"
+              name="bot-field"
               tabIndex={-1}
               aria-hidden="true"
               className="sr-only"

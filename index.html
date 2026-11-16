@@ -27,6 +27,19 @@
   </head>
   <body class="bg-white text-[#0A0A0A] font-sans antialiased selection:bg-[#05FF3C] selection:text-black min-h-screen">
     <div id="root"></div>
+
+    <!-- Static form definitions for Netlify Forms detection.
+         The React app submits to these via AJAX; names must match. -->
+    <form name="contact-newsletter" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact-newsletter" />
+      <input type="email" name="email" />
+      <input type="text" name="bot-field" />
+    </form>
+    <form name="footer-newsletter" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="footer-newsletter" />
+      <input type="email" name="email" />
+      <input type="text" name="bot-field" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

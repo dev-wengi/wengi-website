@@ -84,7 +84,7 @@ const CONTACT_ITEMS = [
 /* ─── Main Component ──────────────────────────────────────────────────────── */
 export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
   const { email, setEmail, status, errorMessage, inputRef, handleSubmit } =
-    useNewsletterForm()
+    useNewsletterForm('contact-newsletter')
   const isLoading = status === 'loading'
 
   return (
@@ -308,11 +308,24 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                   </motion.p>
                 ) : (
                   <form
+                    name="contact-newsletter"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}
                     noValidate
                     className="flex flex-col gap-3"
                     aria-label="Newsletter subscription"
                   >
+                    <input type="hidden" name="form-name" value="contact-newsletter" />
+                    <input
+                      type="text"
+                      name="bot-field"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                      className="sr-only"
+                      style={{ display: 'none' }}
+                    />
                     <div className="flex flex-col sm:flex-row gap-3">
                       {/* Email input */}
                       <div className="flex-1 relative">

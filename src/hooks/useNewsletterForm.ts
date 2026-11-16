@@ -1,7 +1,11 @@
 /**
  * useNewsletterForm.ts
- * Shared hook for the newsletter subscription form used in
- * Contact.tsx (Section 5) and FooterNewsletter.tsx (Section 6 Footer).
+ * Shared hook for the newsletter subscription forms in
+ * Contact.tsx ("contact-newsletter") and FooterNewsletter.tsx
+ * ("footer-newsletter"). Submits to Netlify Forms via AJAX.
+ *
+ * NOTE: Netlify detects forms at build time from static HTML, so mirror
+ * definitions live in index.html. The names here must match those exactly.
  */
 
 import { useState, useRef, useCallback } from 'react'
@@ -20,14 +24,7 @@ export interface UseNewsletterFormReturn {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-/** Simulated async submit — swap for a real API call */
-async function submitNewsletter(email: string): Promise<void> {
-  await new Promise<void>((resolve) => setTimeout(resolve, 900))
-  // Simulate an occasional error for demonstration
-  if (email.endsWith('.fail')) throw new Error('Subscription failed. Please try again.')
-}
-
-export function useNewsletterForm(): UseNewsletterFormReturn {
+export function useNewsletterForm(formName: string): UseNewsletterFormReturn {
   const [email, setEmailRaw] = useState('')
   const [status, setStatus] = useState<NewsletterStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -51,14 +48,25 @@ export function useNewsletterForm(): UseNewsletterFormReturn {
     setErrorMessage('')
 
     try {
-      await submitNewsletter(email)
+      const body = new URLSearchParams({
+        'form-name': formName,
+        email,
+        'bot-field': '',
+      })
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      })
+      if (!response.ok) {
+        throw new Error(`Form POST failed with status ${response.status}`)
+      }
       setStatus('success')
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Something went wrong.'
-      setErrorMessage(msg)
+    } catch {
+      setErrorMessage('Something went wrong. Please try again.')
       setStatus('error')
     }
-  }, [email])
+  }, [email, formName])
 
   return { email, setEmail, status, errorMessage, inputRef, handleSubmit }
 }
