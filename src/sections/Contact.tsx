@@ -107,7 +107,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
           className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[320px] rounded-full"
           style={{
             background:
-              'radial-gradient(ellipse, rgba(108,240,90,0.12) 0%, rgba(108,240,90,0) 70%)',
+              'radial-gradient(ellipse, rgba(5,255,60,0.12) 0%, rgba(5,255,60,0) 70%)',
           }}
         />
 
@@ -115,7 +115,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
         <div
           aria-hidden="true"
           className="absolute bottom-0 left-0 right-0 h-px"
-          style={{ backgroundColor: 'var(--green-highlight, #6CF05A)', opacity: 0.3 }}
+          style={{ backgroundColor: 'var(--green-highlight, #05FF3C)', opacity: 0.3 }}
         />
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-20 sm:py-24 h-full min-h-[340px]">
@@ -131,7 +131,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
             style={{ fontSize: 'clamp(32px, 5vw, 56px)', letterSpacing: '-0.02em' }}
           >
             Have a question or{' '}
-            <span style={{ color: 'var(--green-highlight, #6CF05A)' }}>
+            <span style={{ color: 'var(--green-highlight, #05FF3C)' }}>
               want to connect?
             </span>
           </motion.h2>
@@ -158,9 +158,9 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             custom={0.2}
-            className="mt-8 inline-flex items-center gap-2 font-exo font-semibold text-black rounded-full px-10 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+            className="mt-8 inline-flex items-center gap-2 font-exo font-semibold text-white rounded-full px-10 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
             style={{
-              backgroundColor: 'var(--green-highlight, #6CF05A)',
+              backgroundColor: 'var(--green-highlight, #05FF3C)',
               letterSpacing: '0.02em',
               fontSize: 'clamp(15px, 1.5vw, 18px)',
             }}
@@ -205,7 +205,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                 {/* Icon tile */}
                 <div
                   className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm"
-                  style={{ backgroundColor: 'var(--contact-icon-bg, #6CF05A)' }}
+                  style={{ backgroundColor: 'var(--contact-icon-bg, #05FF3C)' }}
                 >
                   {item.icon}
                 </div>
@@ -222,7 +222,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                     href={item.href}
                     target={item.id === 'location' ? '_blank' : undefined}
                     rel={item.id === 'location' ? 'noopener noreferrer' : undefined}
-                    className="font-sans font-semibold text-[16px] sm:text-[18px] transition-colors duration-200 hover:text-[var(--green-highlight,#6CF05A)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] rounded-sm"
+                    className="font-sans font-semibold text-[16px] sm:text-[18px] transition-colors duration-200 hover:text-[var(--brand-ink,#007D1B)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] rounded-sm"
                     style={{ color: 'var(--text-black, #0A0A0A)' }}
                   >
                     {item.value}
@@ -285,7 +285,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                   }}
                 >
                   Stay in the{' '}
-                  <span style={{ color: 'var(--green-highlight, #6CF05A)' }}>loop</span>
+                  <span style={{ color: 'var(--green-highlight, #05FF3C)' }}>loop</span>
                 </h3>
                 <p
                   className="mt-3 font-sans font-normal text-white/60 leading-relaxed"
@@ -302,7 +302,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                   <motion.p
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center font-exo font-semibold text-[var(--green-highlight,#6CF05A)] text-[18px]"
+                    className="text-center font-exo font-semibold text-[var(--green-highlight,#05FF3C)] text-[18px]"
                   >
                     🎉 You're subscribed! Welcome aboard.
                   </motion.p>
@@ -331,7 +331,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                           aria-describedby={errorMessage ? 'newsletter-error' : undefined}
                           aria-invalid={!!errorMessage}
                           disabled={isLoading}
-                          className="w-full h-[52px] rounded-full px-5 font-sans font-normal text-[15px] bg-white/10 text-white placeholder-white/40 border border-white/20 focus:outline-none focus:border-[var(--green-highlight,#6CF05A)] focus:ring-1 focus:ring-[var(--green-highlight,#6CF05A)] transition-colors duration-200"
+                          className="w-full h-[52px] rounded-full px-5 font-sans font-normal text-[15px] bg-white/10 text-white placeholder-white/40 border border-white/20 focus:outline-none focus:border-[var(--green-highlight,#05FF3C)] focus:ring-1 focus:ring-[var(--green-highlight,#05FF3C)] transition-colors duration-200"
                         />
                       </div>
 
@@ -339,9 +339,9 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                       <button
                         type="submit"
                         disabled={isLoading}
-                        className="h-[52px] inline-flex items-center justify-center font-exo font-semibold text-black rounded-full px-7 transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] focus-visible:ring-offset-4 focus-visible:ring-offset-black hover:-translate-y-0.5 hover:brightness-95"
+                        className="h-[52px] inline-flex items-center justify-center font-exo font-semibold text-white rounded-full px-7 transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black hover:-translate-y-0.5 hover:brightness-95"
                         style={{
-                          backgroundColor: 'var(--green-highlight, #6CF05A)',
+                          backgroundColor: 'var(--green-highlight, #05FF3C)',
                           letterSpacing: '0.02em',
                           fontSize: '15px',
                         }}

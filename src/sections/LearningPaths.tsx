@@ -110,7 +110,7 @@ export const LearningPaths: React.FC = () => {
       <div className="mx-auto w-full max-w-[1160px]">
       <div className="mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between">
         <div className="max-w-[680px]">
-          <p className="mb-3 font-exo text-xs font-semibold uppercase tracking-[0.18em] text-[var(--green-highlight,#6CF05A)]">
+          <p className="mb-3 font-exo text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand-ink,#007D1B)]">
             Start where you are
           </p>
           <h2
@@ -119,7 +119,7 @@ export const LearningPaths: React.FC = () => {
           >
             Choose a path.
             <br />
-            <span className="text-[var(--green-highlight,#6CF05A)]">Build as you learn.</span>
+            <span className="text-[var(--brand-ink,#007D1B)]">Build as you learn.</span>
           </h2>
         </div>
         <p className="max-w-[420px] font-sans text-base leading-relaxed text-neutral-600 sm:text-lg">
@@ -147,7 +147,7 @@ export const LearningPaths: React.FC = () => {
 
       <div className="mt-6 grid gap-6 rounded-[24px] bg-black p-6 text-white sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
         <div>
-          <p className="font-exo text-xs font-semibold uppercase tracking-[0.18em] text-[var(--green-highlight,#6CF05A)]">
+          <p className="font-exo text-xs font-semibold uppercase tracking-[0.18em] text-[var(--green-highlight,#05FF3C)]">
             Learn by making
           </p>
           <h3 className="mt-2 font-headline text-2xl font-bold tracking-tight sm:text-3xl">
@@ -163,7 +163,7 @@ export const LearningPaths: React.FC = () => {
                 key={level.label}
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 font-sans text-xs text-white/85 sm:text-sm"
               >
-                <span className="font-exo font-semibold text-[var(--green-highlight,#6CF05A)]">
+                <span className="font-exo font-semibold text-[var(--green-highlight,#05FF3C)]">
                   {level.number}
                 </span>
                 {level.label}
@@ -175,7 +175,7 @@ export const LearningPaths: React.FC = () => {
           href="https://github.com/dev-wengi/dev-wengi/tree/main/challenges/30-day-challenges"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-full bg-[var(--green-highlight,#6CF05A)] px-6 font-sans text-sm font-bold text-black transition-all hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black lg:self-center"
+          className="inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-full bg-[var(--green-highlight,#05FF3C)] px-6 font-sans text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black lg:self-center"
         >
           Browse challenges
           <ArrowUpRight size={17} aria-hidden="true" />
@@ -184,7 +184,7 @@ export const LearningPaths: React.FC = () => {
 
       <a
         href="#how-it-works"
-        className="mt-8 inline-flex items-center gap-2 font-sans text-sm font-semibold text-neutral-600 transition-colors hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)]"
+        className="mt-8 inline-flex items-center gap-2 font-sans text-sm font-semibold text-neutral-600 transition-colors hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)]"
       >
         Not sure how to begin?
         <ArrowDownRight size={16} aria-hidden="true" />

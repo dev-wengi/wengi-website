@@ -56,7 +56,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         className="font-headline font-extrabold text-[32px] sm:text-[40px] md:text-[48px] tracking-[-0.02em] leading-tight text-white select-none"
       >
         {before}{' '}
-        <span className="text-[var(--green-highlight,#6CF05A)] font-extrabold">
+        <span className="text-[var(--green-highlight,#05FF3C)] font-extrabold">
           {highlight}
         </span>
       </h2>

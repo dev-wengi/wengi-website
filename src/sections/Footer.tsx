@@ -172,7 +172,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             <div className="flex flex-col gap-5">
               <h3
                 className="font-exo font-semibold text-[13px] uppercase tracking-[0.22em]"
-                style={{ color: 'var(--footer-label, #6CF05A)' }}
+                style={{ color: 'var(--footer-label, #05FF3C)' }}
               >
                 Follow Us
               </h3>

@@ -25,7 +25,7 @@ interface NavItemsProps {
     name: string
     link: string
   }[]
-  activeLink: string
+  activeLink: string | null
   className?: string
   onItemClick?: () => void
 }
@@ -142,10 +142,10 @@ export const NavItems = ({
           onMouseEnter={() => setHovered(index)}
           onFocus={() => setHovered(index)}
           onClick={onItemClick}
-          className="relative rounded-full px-4 py-2 font-inter text-base font-medium text-[var(--text-black)] transition-colors duration-200 hover:text-[var(--green-button-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-button)] focus-visible:ring-offset-[3px]"
+          className="relative rounded-full px-4 py-2 font-inter text-base font-medium text-[var(--text-black)] transition-colors duration-200 hover:text-[var(--brand-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-button)] focus-visible:ring-offset-[3px]"
           style={
             item.link === activeLink
-              ? { color: 'var(--green-button-hover)' }
+              ? { color: 'var(--brand-ink)' }
               : undefined
           }
         >
@@ -288,7 +288,7 @@ export const NavbarButton = ({
     gradient:
       'bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]',
     brand:
-      'rounded-full bg-[var(--green-button)] px-7 py-2.5 font-exo text-[18px] font-semibold text-white shadow-none hover:bg-[var(--green-button-hover)]',
+      'rounded-full bg-[var(--brand)] px-7 py-2.5 font-exo text-[18px] font-semibold text-white shadow-none hover:bg-[var(--brand-hover)]',
   }
 
   return (

@@ -21,7 +21,7 @@ export const TechTag: React.FC<TechTagProps> = ({
   const toneClasses =
     tone === 'dark'
       ? 'border-white/55 text-white'
-      : 'border-[#1A1A1A] text-[#0A0A0A] hover:border-[var(--green-highlight,#6CF05A)] hover:bg-[var(--green-highlight,#6CF05A)] hover:text-black'
+      : 'border-[#1A1A1A] text-[#0A0A0A] hover:border-[var(--green-highlight,#05FF3C)] hover:bg-[var(--green-highlight,#05FF3C)] hover:text-white'
 
   return (
     <span

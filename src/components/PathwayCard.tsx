@@ -129,7 +129,7 @@ export function PathwayCard({
         touchTap.current = false
         wasActiveAtPointerDown.current = false
       }}
-      className={`group/canvas-card relative flex min-h-[356px] w-full flex-col border border-black/[0.2] bg-[#F7F7F7] p-4 outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+      className={`group/canvas-card relative flex min-h-[356px] w-full flex-col border border-black/[0.2] bg-[#F7F7F7] p-4 outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
         active ? 'isActive' : ''
       }`}
     >
@@ -186,11 +186,7 @@ export function PathwayCard({
           active ? '-translate-y-2' : ''
         }`}
       >
-        <span
-          className={`flex h-11 w-11 items-center justify-center rounded-full bg-[var(--green-highlight,#6CF05A)] text-black transition duration-250 ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover/canvas-card:text-white ${
-            active ? 'text-white' : ''
-          }`}
-        >
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--green-highlight,#05FF3C)] text-black transition duration-250 ease-[cubic-bezier(0.2,0.7,0.2,1)]">
           <Icon size={22} strokeWidth={2} aria-hidden="true" />
         </span>
         <span
@@ -266,7 +262,7 @@ export function PathwayCard({
           touchTap.current = false
           wasActiveAtPointerDown.current = false
         }}
-        className={`group/link relative z-20 mt-auto inline-flex items-center gap-2 pt-6 font-sans text-sm font-semibold transition duration-250 ease-[cubic-bezier(0.2,0.7,0.2,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] focus-visible:ring-offset-2 ${
+        className={`group/link relative z-20 mt-auto inline-flex items-center gap-2 pt-6 font-sans text-sm font-semibold transition duration-250 ease-[cubic-bezier(0.2,0.7,0.2,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-2 ${
           active
             ? 'text-white focus-visible:ring-offset-black'
             : 'text-black group-hover/canvas-card:text-white'

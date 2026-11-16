@@ -111,9 +111,9 @@ export const Faqs: React.FC<FaqsProps> = ({
             <button
               type="button"
               onClick={() => setShowAll((prev) => !prev)}
-              className="w-full sm:w-auto max-w-[340px] sm:max-w-none inline-flex items-center justify-center font-exo font-semibold text-[18px] sm:text-[20px] tracking-[0.02em] text-black rounded-full px-12 sm:px-[70px] py-4 sm:py-[18px] transition-all duration-200 shadow-sm hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[0_8px_30px_rgba(108,240,90,0.4)] active:translate-y-0 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+              className="w-full sm:w-auto max-w-[340px] sm:max-w-none inline-flex items-center justify-center font-exo font-semibold text-[18px] sm:text-[20px] tracking-[0.02em] text-white rounded-full px-12 sm:px-[70px] py-4 sm:py-[18px] transition-all duration-200 shadow-sm hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[0_8px_30px_rgba(5,255,60,0.4)] active:translate-y-0 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
               style={{
-                backgroundColor: 'var(--green-highlight, #6CF05A)',
+                backgroundColor: 'var(--green-highlight, #05FF3C)',
               }}
             >
               {showAll ? 'Show fewer questions' : 'See more questions'}

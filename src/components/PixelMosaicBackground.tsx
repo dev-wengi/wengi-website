@@ -107,10 +107,10 @@ export function PixelMosaicBackground({
     let height = 0
     let cellSize = 0
     let dpr = 1
-    let light = '#F2F2F2'
-    let dark = '#000000'
+    let light = '#FFFFFF'
+    let dark = '#060A07'
     let digitColor = '#9A9A9A'
-    let glowColor = 'rgba(108, 240, 90, 0.35)'
+    let glowColor = 'rgba(5, 255, 60, 0.35)'
     let rect: DOMRect | null = null
     let isVisible = false
     let isReducedMotion = reducedMotionQuery.matches
@@ -204,10 +204,10 @@ export function PixelMosaicBackground({
 
     const renderRestImage = () => {
       const styles = getComputedStyle(section)
-      light = lightColor || cssColor(styles, '--pixel-light', '#F2F2F2')
-      dark = darkColor || cssColor(styles, '--pixel-dark', '#000000')
+      light = lightColor || cssColor(styles, '--pixel-light', '#FFFFFF')
+      dark = darkColor || cssColor(styles, '--pixel-dark', '#060A07')
       digitColor = cssColor(styles, '--pixel-digit', '#9A9A9A')
-      glowColor = cssColor(styles, '--pixel-glow', 'rgba(108, 240, 90, 0.35)')
+      glowColor = cssColor(styles, '--pixel-glow', 'rgba(5, 255, 60, 0.35)')
 
       restCanvas.width = Math.ceil(width * dpr)
       restCanvas.height = Math.ceil(height * dpr)

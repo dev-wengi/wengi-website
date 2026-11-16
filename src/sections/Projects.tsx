@@ -126,7 +126,7 @@ export const Projects: React.FC<ProjectsProps> = ({
               className="font-headline text-[36px] font-extrabold leading-[1] tracking-[-0.02em] text-[#0A0A0A] select-none sm:text-[44px] lg:text-[56px]"
             >
               <span className="block">
-                <span className="font-extrabold text-[var(--green-highlight,#6CF05A)]">
+                <span className="font-extrabold text-[var(--brand-ink,#007D1B)]">
                   Real-world
                 </span>{' '}
                 projects
@@ -199,8 +199,8 @@ export const Projects: React.FC<ProjectsProps> = ({
           <button
             type="button"
             onClick={() => setShowAll((previous) => !previous)}
-            className="inline-flex items-center justify-center rounded-full px-8 py-3.5 font-exo text-[18px] font-semibold tracking-[0.02em] text-black transition-[transform,filter] duration-300 [transition-timing-function:cubic-bezier(0.2,0.7,0.2,1)] hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] focus-visible:ring-offset-2 sm:px-9 sm:py-4 sm:text-[20px]"
-            style={{ backgroundColor: 'var(--green-highlight, #6CF05A)' }}
+            className="inline-flex items-center justify-center rounded-full px-8 py-3.5 font-exo text-[18px] font-semibold tracking-[0.02em] text-white transition-[transform,filter] duration-300 [transition-timing-function:cubic-bezier(0.2,0.7,0.2,1)] hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-2 sm:px-9 sm:py-4 sm:text-[20px]"
+            style={{ backgroundColor: 'var(--green-highlight, #05FF3C)' }}
           >
             {showAll ? 'Show less' : 'See more projects'}
           </button>
@@ -209,7 +209,7 @@ export const Projects: React.FC<ProjectsProps> = ({
           href="https://github.com/dev-wengi/dev-wengi/tree/main/projects"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-sm font-sans text-[16px] font-semibold text-black underline decoration-[var(--green-highlight,#6CF05A)] decoration-2 underline-offset-4 transition-colors hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)]"
+          className="mt-6 inline-flex items-center gap-2 rounded-sm font-sans text-[16px] font-semibold text-black underline decoration-[var(--green-highlight,#05FF3C)] decoration-2 underline-offset-4 transition-colors hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)]"
         >
           Browse all project repositories on GitHub
         </a>

@@ -16,6 +16,15 @@ import { navItems } from '../data/nav'
 const MOBILE_MENU_ID = 'mobile-navigation-menu'
 const ACTIVE_SECTION_IDS = ['home', 'vision', 'projects', 'faqs', 'contact']
 
+// Sections without a matching nav item map to null (no highlight).
+const SECTION_TO_NAV_LINK: Record<string, string | null> = {
+  home: '#home',
+  vision: '#vision',
+  projects: null,
+  faqs: null,
+  contact: null,
+}
+
 function getActiveSection(): string {
   const activationPoint = window.innerHeight * 0.35
   const sections = ACTIVE_SECTION_IDS.map((id) => document.getElementById(id))
@@ -66,7 +75,8 @@ export const SiteNavbar = () => {
     }
   }, [isMobileMenuOpen])
 
-  const activeLink = activeSection === 'home' ? '#home' : '#vision'
+  const activeLink: string | null =
+    SECTION_TO_NAV_LINK[activeSection] ?? null
 
   return (
     <MotionConfig reducedMotion="user">
@@ -126,10 +136,10 @@ export const SiteNavbar = () => {
                   key={item.name}
                   href={item.link}
                   aria-current={item.link === activeLink ? 'location' : undefined}
-                  className="rounded-md py-2 font-inter text-lg font-medium text-[var(--text-black)] transition-colors hover:text-[var(--green-button-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-button)] focus-visible:ring-offset-[3px]"
+                  className="rounded-md py-2 font-inter text-lg font-medium text-[var(--text-black)] transition-colors hover:text-[var(--brand-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-button)] focus-visible:ring-offset-[3px]"
                   style={
                     item.link === activeLink
-                      ? { color: 'var(--green-button-hover)' }
+                      ? { color: 'var(--brand-ink)' }
                       : undefined
                   }
                 >

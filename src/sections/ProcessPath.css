@@ -50,7 +50,7 @@
   height: 14px;
   border: 2px solid var(--path-track);
   border-radius: 50%;
-  background: #F2F2F2;
+  background: var(--paper, #FFFFFF);
   transition:
     background-color 250ms var(--process-ease),
     border-color 250ms var(--process-ease);
@@ -100,7 +100,7 @@
 
 .process-step__copy h3 {
   margin: 0;
-  color: #1A1A1A;
+  color: var(--text-on-light, #060A07);
   font-family: Inter, sans-serif;
   font-size: 26px;
   font-weight: 700;
@@ -109,7 +109,7 @@
 
 .process-step__copy p {
   margin: 8px 0 0;
-  color: #555;
+  color: var(--muted-on-light, #57615B);
   font-family: Inter, sans-serif;
   font-size: 17px;
   font-weight: 400;

@@ -1,64 +1,90 @@
 :root {
   /* ==========================================================================
-     GLOBAL COLOR TOKENS
+     WENGI DESIGN SYSTEM v3 — primitives
+     Colors sampled from the Tablet 834 reference. One vivid green (#05FF3C);
+     everything else is neutral, pine, or mint. Green means "brand / go".
      ========================================================================== */
-  --bg-dark: #1E1E1E;           /* main dark section background */
-  --bg-darker: #151515;         /* footers, overlays */
-  --surface-light: #FFFFFF;     /* rounded white cards */
-  --page-light: #F2F2F2;        /* page background behind cards */
-  --green-neon: #6CF05A;
-  --green-brand: #6CF05A;
-  --green-deep: #6CF05A;
+  --brand: #05FF3C;            /* THE one green — fills, CTAs, dark-bg accents */
+  --brand-hover: #04EB37;      /* hover / pressed fills */
+  --brand-ink: #007D1B;        /* green TEXT on light (5.3:1 on white) */
+  --brand-soft: #E8FBEA;       /* mint tint surface on light */
+
+  --pine: #163520;             /* deep green panel */
+  --pine-deep: #0B170E;        /* darkest green panel */
+
+  --ink: #060A07;              /* page dark */
+  --ink-raised: #111713;       /* raised dark surface */
+  --paper: #FFFFFF;            /* page light */
+  --card: #FFFFFF;             /* light card surface */
+
   --text-on-dark: #FFFFFF;
-  --text-muted-dark: #A8A8A8;
-  --text-on-light: #1A1A1A;
-  --text-muted-light: #8C8C8C;
+  --muted-on-dark: #A7B1AB;
+  --text-on-light: #060A07;
+  --muted-on-light: #57615B;
 
-  /* Section 1: Dev.wengi Light Brand Extension Tokens */
-  --green-highlight: #6CF05A;
-  --green-button: #6CF05A;
-  --green-button-hover: #6CF05A;
-  --nav-pill-bg: #F3F4F6;       /* center nav capsule */
-  --stats-bg: rgba(70, 70, 70, 0.94); /* floating stats panel */
+  --line-on-dark: rgba(255, 255, 255, 0.14);
+  --line-on-light: rgba(6, 10, 7, 0.12);
+
+  /* ==========================================================================
+     Roles
+     ========================================================================== */
+  --page-dark: var(--ink);
+  --page-light: var(--paper);
+  --surface-light: var(--card);
+
+  --bg-gray: #E4E7E2;          /* projects section band */
+  --nav-pill-bg: #EDF0EC;      /* nav hover pill on light */
+  --stats-bg: rgba(17, 23, 19, 0.94);
   --stats-border: rgba(255, 255, 255, 0.18);
-  --text-black: #0A0A0A;
 
-  /* Section 2: Vision & Mission Dark Tokens */
-  --bg-black: #000000;          /* Vision section background */
-  --pixel-light: #F2F2F2;
-  --pixel-dark: #000000;
+  --pixel-light: var(--paper);
+  --pixel-dark: var(--ink);
   --pixel-digit: #9A9A9A;
-  --pixel-glow: rgba(108, 240, 90, 0.35);
-  --green-cta-light: #6CF05A;
-  --mission-overlay: linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(108,240,90,0.75) 45%, rgba(108,240,90,0.85) 100%);
+  --pixel-glow: rgba(5, 255, 60, 0.35);
 
-  /* Section 3: Projects Tokens */
-  --bg-gray: #E2E2E2;           /* section background */
-  --card-white: #FFFFFF;
-  --chip-border: #1A1A1A;
-  --green-live: #6CF05A;
+  --chip-border: var(--text-on-light);
+  --faq-border: var(--brand);
+  --faq-dot: #FFFFFF;
 
-  /* Section 4: F.A.Qs Dark Tokens */
-  --faq-border: #6CF05A;
-  --faq-dot: #FFFFFF;           /* the dot after each number */
-
-  /* Section 5: Contact & Newsletter Tokens */
-  --contact-icon-bg: #6CF05A;   /* icon tile */
-  --divider-dark: #111111;      /* thin vertical separators */
-  --card-border-gray: #9A9A9A;  /* border of the newsletter card */
+  --contact-icon-bg: var(--brand);
+  --divider-dark: #111111;
+  --card-border-gray: #9A9A9A;
   --watermark-opacity: 0.10;
 
-  /* Section 6: Footer Tokens */
-  --footer-blue:      #000000;  /* footer background */
-  --footer-blue-deep: #000000;  /* hover/pressed states */
-  --footer-ink:       #FFFFFF;  /* main text on dark */
-  --footer-muted:     rgba(255,255,255,0.72); /* secondary text */
-  --footer-line:      rgba(255,255,255,0.25); /* borders/dividers */
-  --footer-label:     #6CF05A;  /* = --green-highlight, small uppercase labels */
-  --pixel-above-bg:   #FFFFFF;  /* page colour directly above the footer */
+  --footer-blue: var(--ink);
+  --footer-blue-deep: var(--ink);
+  --footer-ink: #FFFFFF;
+  --footer-muted: rgba(255, 255, 255, 0.72);
+  --footer-line: rgba(255, 255, 255, 0.25);
+  --footer-label: var(--brand);
+  --pixel-above-bg: #FFFFFF;
+
+  --mission-overlay: linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(5,255,60,0.75) 45%, rgba(5,255,60,0.85) 100%);
+
+  /* ==========================================================================
+     Legacy aliases — every pre-v3 token still resolves, so existing
+     components re-theme without edits. New code uses the primitives above.
+     ========================================================================== */
+  --bg-dark: var(--ink-raised);
+  --bg-darker: var(--ink);
+  --bg-black: var(--ink);
+  --text-black: var(--text-on-light);
+
+  --green-neon: var(--brand);
+  --green-brand: var(--brand);
+  --green-deep: var(--brand);
+  --green-highlight: var(--brand);
+  --green-button: var(--brand);
+  --green-button-hover: var(--brand-hover);
+  --green-cta-light: var(--brand);
+  --green-live: var(--brand);
+
+  --text-muted-dark: var(--muted-on-dark);
+  --text-muted-light: var(--muted-on-light);
+  --card-white: var(--card);
 
   /* Gradients & Shadows */
-  --gradient-brand: linear-gradient(135deg, #6CF05A 0%, #6CF05A 100%);
+  --gradient-brand: linear-gradient(135deg, #05FF3C 0%, #04EB37 100%);
   --shadow-card-light: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 1px 1px rgba(0, 0, 0, 0.05);
   --shadow-card-dark: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
 
@@ -126,6 +152,16 @@
 .border-green-brand { border-color: var(--green-brand); }
 .border-green-deep { border-color: var(--green-deep); }
 
+/* New-primitive utilities */
+.bg-brand { background-color: var(--brand); }
+.bg-brand-soft { background-color: var(--brand-soft); }
+.bg-ink { background-color: var(--ink); }
+.bg-paper { background-color: var(--paper); }
+.bg-pine { background-color: var(--pine); }
+.bg-pine-deep { background-color: var(--pine-deep); }
+.text-brand { color: var(--brand); }
+.text-brand-ink { color: var(--brand-ink); }
+
 /* Decorative vertical grid lines (green or white at 15% opacity) */
 .grid-line-white {
   width: 1px;
@@ -136,7 +172,7 @@
 .grid-line-green {
   width: 1px;
   height: 100%;
-  background-color: rgba(108, 240, 90, 0.15);
+  background-color: rgba(5, 255, 60, 0.15);
 }
 
 /* Duotone image filter */

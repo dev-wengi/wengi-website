@@ -11,12 +11,12 @@ export interface FeatureRowProps {
 }
 
 /**
- * Terminal Prompt Icon Tile (54x54px, #6CF05A, rounded-[3px], black >_ glyph)
+ * Terminal Prompt Icon Tile (54x54px, #05FF3C, rounded-[3px], black >_ glyph)
  */
 export const TerminalIconTile: React.FC<{ className?: string }> = ({ className = '' }) => (
   <div
     className={`w-[54px] h-[54px] min-w-[54px] rounded-[3px] flex items-center justify-center shrink-0 shadow-sm ${className}`}
-    style={{ backgroundColor: 'var(--green-highlight, #6CF05A)' }}
+    style={{ backgroundColor: 'var(--green-highlight, #05FF3C)' }}
     aria-hidden="true"
   >
     <svg

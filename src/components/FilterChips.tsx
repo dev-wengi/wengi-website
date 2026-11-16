@@ -62,10 +62,10 @@ export const FilterChips: React.FC<FilterChipsProps> = ({
             role="tab"
             aria-selected={isSelected}
             onClick={() => onSelectCategory(category)}
-            className={`font-exo font-semibold text-[16px] sm:text-[18px] rounded-full px-6 sm:px-8 py-2 sm:py-2.5 transition-all duration-200 select-none cursor-pointer border-[1.5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--green-highlight,#6CF05A)] ${
+            className={`font-exo font-semibold text-[16px] sm:text-[18px] rounded-full px-6 sm:px-8 py-2 sm:py-2.5 transition-all duration-200 select-none cursor-pointer border-[1.5px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] ${
               isSelected
-                ? 'bg-[var(--green-highlight,#6CF05A)] border-[var(--green-highlight,#6CF05A)] text-black shadow-sm'
-                : 'bg-transparent border-[#1A1A1A] text-[#0A0A0A] hover:border-[var(--green-highlight,#6CF05A)] hover:text-[#0A0A0A] hover:-translate-y-[1px]'
+                ? 'bg-[var(--green-highlight,#05FF3C)] border-[var(--green-highlight,#05FF3C)] text-white shadow-sm'
+                : 'bg-transparent border-[#1A1A1A] text-[#0A0A0A] hover:border-[var(--green-highlight,#05FF3C)] hover:text-[#0A0A0A] hover:-translate-y-[1px]'
             }`}
           >
             {category}

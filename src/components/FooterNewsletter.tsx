@@ -25,7 +25,7 @@ export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = 
       {/* Column heading */}
       <h3
         className="font-exo font-semibold text-[13px] uppercase tracking-[0.22em]"
-        style={{ color: 'var(--footer-label, #6CF05A)' }}
+        style={{ color: 'var(--footer-label, #05FF3C)' }}
       >
         Stay Updated
       </h3>
@@ -37,7 +37,7 @@ export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = 
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="font-exo font-semibold text-[var(--footer-label,#6CF05A)] text-[16px] leading-snug"
+            className="font-exo font-semibold text-[var(--footer-label,#05FF3C)] text-[16px] leading-snug"
           >
             🎉 You're subscribed!
           </motion.p>
@@ -84,9 +84,9 @@ export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = 
                   borderColor: 'var(--footer-line, rgba(255,255,255,0.25))',
                 }}
                 onFocus={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--footer-label, #6CF05A)'
+                  e.currentTarget.style.borderColor = 'var(--footer-label, #05FF3C)'
                   e.currentTarget.style.boxShadow =
-                    '0 0 0 2px rgba(108,240,90,0.18)'
+                    '0 0 0 2px rgba(5,255,60,0.18)'
                 }}
                 onBlur={(e) => {
                   e.currentTarget.style.borderColor =
@@ -98,8 +98,8 @@ export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="h-[52px] px-[22px] font-sans font-bold text-[15px] text-black rounded-[10px] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#000000)] disabled:opacity-60 whitespace-nowrap"
-                style={{ backgroundColor: 'var(--green-highlight, #6CF05A)' }}
+                className="h-[52px] px-[22px] font-sans font-bold text-[15px] text-white rounded-[10px] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#000000)] disabled:opacity-60 whitespace-nowrap"
+                style={{ backgroundColor: 'var(--green-highlight, #05FF3C)' }}
                 onMouseEnter={(e) => {
                   if (isLoading) return
                   ;(e.currentTarget as HTMLElement).style.filter = 'brightness(1.08)'

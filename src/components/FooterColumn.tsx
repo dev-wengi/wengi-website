@@ -25,7 +25,7 @@ export const FooterColumn: React.FC<FooterColumnProps> = ({ column, className = 
       {/* Column heading */}
       <h3
         className="font-exo font-semibold text-[13px] uppercase mb-5 tracking-[0.22em]"
-        style={{ color: 'var(--footer-label, #6CF05A)' }}
+        style={{ color: 'var(--footer-label, #05FF3C)' }}
       >
         {column.heading}
       </h3>

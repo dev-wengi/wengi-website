@@ -11,7 +11,7 @@ import { FooterSection } from './sections/Footer'
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white text-[var(--text-black,#0A0A0A)] flex flex-col selection:bg-[var(--green-highlight,#6CF05A)] selection:text-black">
+    <div className="min-h-screen bg-white text-[var(--text-black,#0A0A0A)] flex flex-col selection:bg-[var(--green-highlight,#05FF3C)] selection:text-black">
       <SiteNavbar />
 
       {/* Main Page Sections */}

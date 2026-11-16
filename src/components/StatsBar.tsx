@@ -91,8 +91,8 @@ export const StatsBar: React.FC<StatsBarProps> = ({
               <AnimatedCounter target={item.number} suffix={item.suffix} />
             </div>
 
-            {/* Label: var(--green-highlight) #6CF05A, Exo 2 600, ~20px */}
-            <div className="font-exo font-semibold text-[11px] sm:text-[14px] md:text-[17px] lg:text-[20px] text-[var(--green-highlight,#6CF05A)] tracking-[0.02em] leading-snug">
+            {/* Label: var(--green-highlight) #05FF3C, Exo 2 600, ~20px */}
+            <div className="font-exo font-semibold text-[11px] sm:text-[14px] md:text-[17px] lg:text-[20px] text-[var(--green-highlight,#05FF3C)] tracking-[0.02em] leading-snug">
               {item.label}
             </div>
           </div>

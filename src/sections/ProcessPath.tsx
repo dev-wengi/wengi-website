@@ -148,13 +148,13 @@ export const ProcessPath: React.FC = () => {
     <section
       id="how-it-works"
       aria-labelledby="how-it-works-heading"
-      className="process-path-section relative w-full scroll-mt-24 overflow-x-clip bg-[#F2F2F2] px-4 sm:px-6"
+      className="process-path-section relative w-full scroll-mt-24 overflow-x-clip bg-[var(--paper,#FFFFFF)] px-4 sm:px-6"
       style={
         {
-          '--path-line': 'var(--green-button, #6CF05A)',
+          '--path-line': 'var(--green-button, #05FF3C)',
           '--path-track': 'rgba(26,26,26,0.14)',
-          '--step-num': 'var(--green-button, #6CF05A)',
-          '--note-color': 'var(--green-button-hover, #6CF05A)',
+          '--step-num': 'var(--brand-ink, #007D1B)',
+          '--note-color': 'var(--brand-ink, #007D1B)',
         } as React.CSSProperties
       }
     >
@@ -164,7 +164,7 @@ export const ProcessPath: React.FC = () => {
         className="absolute left-0 top-0 h-0 scroll-mt-24"
       />
       <div className="mx-auto w-full max-w-[1160px]">
-        <p className="mb-3 font-exo text-xs font-semibold uppercase tracking-[0.18em] text-[var(--green-highlight,#6CF05A)]">
+        <p className="mb-3 font-exo text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand-ink,#007D1B)]">
           A simple way forward
         </p>
         <h2
@@ -183,7 +183,7 @@ export const ProcessPath: React.FC = () => {
           href="https://github.com/dev-wengi/dev-wengi"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-7 inline-flex items-center gap-2 font-sans text-sm font-semibold text-black underline decoration-[var(--green-highlight,#6CF05A)] decoration-2 underline-offset-4 transition-colors hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#6CF05A)]"
+          className="mt-7 inline-flex items-center gap-2 font-sans text-sm font-semibold text-black underline decoration-[var(--green-highlight,#05FF3C)] decoration-2 underline-offset-4 transition-colors hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)]"
         >
           Read the getting-started guide
           <ArrowUpRight size={16} aria-hidden="true" />

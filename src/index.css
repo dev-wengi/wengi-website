@@ -2,50 +2,62 @@
 @config "../tailwind.config.js";
 
 @theme {
-  --color-bg-dark: #1E1E1E;
-  --color-bg-darker: #151515;
+  --color-brand: #05FF3C;
+  --color-brand-hover: #04EB37;
+  --color-brand-ink: #007D1B;
+  --color-brand-soft: #E8FBEA;
+
+  --color-pine: #163520;
+  --color-pine-deep: #0B170E;
+
+  --color-ink: #060A07;
+  --color-ink-raised: #111713;
+  --color-paper: #FFFFFF;
+
+  --color-bg-dark: #111713;
+  --color-bg-darker: #060A07;
   --color-surface-light: #FFFFFF;
-  --color-page-light: #F2F2F2;
-  --color-green-neon: #6CF05A;
-  --color-green-brand: #6CF05A;
-  --color-green-deep: #6CF05A;
+  --color-page-light: #FFFFFF;
+  --color-green-neon: #05FF3C;
+  --color-green-brand: #05FF3C;
+  --color-green-deep: #05FF3C;
   --color-text-on-dark: #FFFFFF;
-  --color-text-muted-dark: #A8A8A8;
-  --color-text-on-light: #1A1A1A;
-  --color-text-muted-light: #8C8C8C;
+  --color-text-muted-dark: #A7B1AB;
+  --color-text-on-light: #060A07;
+  --color-text-muted-light: #57615B;
 
   /* Section 1 Light Tokens */
-  --color-green-highlight: #6CF05A;
-  --color-green-button: #6CF05A;
-  --color-green-button-hover: #6CF05A;
-  --color-nav-pill-bg: #F3F4F6;
-  --color-stats-bg: rgba(70, 70, 70, 0.94);
+  --color-green-highlight: #05FF3C;
+  --color-green-button: #05FF3C;
+  --color-green-button-hover: #04EB37;
+  --color-nav-pill-bg: #EDF0EC;
+  --color-stats-bg: rgba(17, 23, 19, 0.94);
   --color-stats-border: rgba(255, 255, 255, 0.18);
-  --color-text-black: #0A0A0A;
+  --color-text-black: #060A07;
 
   /* Section 2 Dark Tokens */
-  --color-bg-black: #000000;
-  --color-pixel-light: var(--pixel-light, #F2F2F2);
-  --color-pixel-dark: var(--pixel-dark, #000000);
+  --color-bg-black: #060A07;
+  --color-pixel-light: var(--pixel-light, #FFFFFF);
+  --color-pixel-dark: var(--pixel-dark, #060A07);
   --color-pixel-digit: var(--pixel-digit, #9A9A9A);
-  --color-pixel-glow: var(--pixel-glow, rgba(108, 240, 90, 0.35));
-  --color-green-cta-light: #6CF05A;
+  --color-pixel-glow: var(--pixel-glow, rgba(5, 255, 60, 0.35));
+  --color-green-cta-light: #05FF3C;
 
   /* Section 3 Projects Tokens */
-  --color-bg-gray: #E2E2E2;
+  --color-bg-gray: #E4E7E2;
   --color-card-white: #FFFFFF;
-  --color-chip-border: #1A1A1A;
-  --color-green-live: #6CF05A;
+  --color-chip-border: #060A07;
+  --color-green-live: #05FF3C;
 
   /* Section 4 FAQ Tokens */
-  --color-faq-border: #6CF05A;
+  --color-faq-border: #05FF3C;
   --color-faq-dot: #FFFFFF;
 
   /* Section 6 Footer Tokens */
-  --color-footer-blue: #000000;
-  --color-footer-blue-deep: #000000;
+  --color-footer-blue: #060A07;
+  --color-footer-blue-deep: #060A07;
   --color-footer-ink: #FFFFFF;
-  --color-footer-label: #6CF05A;
+  --color-footer-label: #05FF3C;
 
   --font-inter: "Inter", sans-serif;
   --font-headline: "Inter", "Inter Tight", sans-serif;
