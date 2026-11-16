@@ -6,6 +6,8 @@ import { ScrollManager } from './components/ScrollManager'
 import { Home } from './pages/Home'
 import { Resources } from './pages/Resources'
 import { BriefDetail } from './pages/BriefDetail'
+import { Blog } from './pages/Blog'
+import { Article } from './pages/Article'
 import { NotFound } from './pages/NotFound'
 
 const SiteLayout: React.FC = () => (
@@ -26,6 +28,8 @@ export const App: React.FC = () => (
         <Route index element={<Home />} />
         <Route path="resources" element={<Resources />} />
         <Route path="resources/brief/:id" element={<BriefDetail />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="blog/:slug" element={<Article />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
