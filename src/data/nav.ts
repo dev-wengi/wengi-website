@@ -4,10 +4,10 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { name: 'Home', link: '#home' },
-  { name: 'About', link: '#vision' },
-  // TODO: Replace this placeholder when the blog destination exists.
-  { name: 'Blog', link: '#' },
-  // TODO: Replace this placeholder when the resources destination exists.
-  { name: 'Resources', link: '#' },
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
+  { name: 'Blog', link: '/blog' },
+  { name: 'Resources', link: '/resources' },
 ]
+
+export const GET_STARTED_LINK = '/get-started'

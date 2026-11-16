@@ -1,35 +1,21 @@
 /**
  * sections/Footer.tsx
- * Section 6: Footer — black background with editorial content, navigation,
- * and a bottom bar.
- *
- * Structure (top → bottom):
- *  A) PixelField — pixel edge sits in reserved space above the footer
- *  B) Editorial header row — numbered label, large thin heading, 2 text blocks
- *  C) Footer links — brand | Company | Resources | Community | Follow + Newsletter
- *  D) Bottom bar — copyright | legal links
- *
- * All other elements: Framer Motion whileInView fade+slideUp, stagger 0.08s.
- * prefers-reduced-motion: skip all motion.
+ * Site footer shared by all pages: brand + socials, link columns,
+ * newsletter mini form, and a bottom bar.
  */
 
 import React from 'react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
-import { PixelField } from '../components/PixelField'
+import { Link } from 'react-router-dom'
 import { FooterColumn } from '../components/FooterColumn'
 import { SocialLinks } from '../components/SocialLinks'
 import { FooterNewsletter } from '../components/FooterNewsletter'
 import { Logo } from '../components/Logo'
 import { FOOTER_COLUMNS, LEGAL_LINKS } from '../data/footer'
 
-// ─── Props ───────────────────────────────────────────────────────────────────
-
 export interface FooterSectionProps {
-  heading?: [string, string]
   className?: string
 }
-
-// ─── Animation variants ───────────────────────────────────────────────────────
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -45,25 +31,9 @@ const staggerContainer: Variants = {
   visible: { transition: { staggerChildren: 0.08 } },
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
-
-export const FooterSection: React.FC<FooterSectionProps> = ({
-  heading = ['LEARN BY BUILDING.', 'GROW TOGETHER.'],
-  className = '',
-}) => {
+export const FooterSection: React.FC<FooterSectionProps> = ({ className = '' }) => {
   const shouldReduceMotion = useReducedMotion()
   const year = new Date().getFullYear()
-
-  const animProps = (delay = 0) =>
-    shouldReduceMotion
-      ? {}
-      : {
-          variants: fadeUp,
-          initial: 'hidden' as const,
-          whileInView: 'visible' as const,
-          viewport: { once: true, amount: 0.1 },
-          custom: delay,
-        }
 
   const containerAnimProps = shouldReduceMotion
     ? {}
@@ -74,60 +44,24 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
         viewport: { once: true, amount: 0.05 },
       }
 
+  const itemVariants = shouldReduceMotion ? {} : fadeUp
+
   return (
     <footer
       id="footer"
       aria-label="Site footer"
       className={`relative w-full overflow-x-clip ${className}`}
-      style={{
-        backgroundColor: 'var(--footer-blue, #000000)',
-      }}
+      style={{ backgroundColor: 'var(--footer-blue, #060A07)' }}
     >
-      {/* Reserved space in Contact keeps the pixel edge clear of the newsletter. */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'relative',
-          width: '100%',
-          zIndex: 0,
-          pointerEvents: 'none',
-        }}
-      >
-        <PixelField seed={42} color="var(--footer-blue, #000000)" />
-      </div>
-
-      {/* ── A) EDITORIAL HEADER ROW ───────────────────────────────────────── */}
-      <div className="relative z-10 max-w-[1280px] mx-auto w-full px-6 pt-14 sm:pt-16 lg:pt-20">
-        {/* Large thin heading */}
-        <motion.div className="mb-12 sm:mb-14" {...animProps(0.06)}>
-          <h2
-            className="font-exo uppercase text-white text-left leading-[0.95] tracking-[0.02em]"
-            style={{
-              fontWeight: 200,
-              fontSize: 'clamp(40px, 8vw, 120px)',
-              letterSpacing: '0.02em',
-            }}
-          >
-            {heading[0]}
-            <br />
-            {heading[1]}
-          </h2>
-        </motion.div>
-      </div>
-
-      {/* ── C) FOOTER LINKS ───────────────────────────────────────────────── */}
-      <div
-        className="relative z-10 max-w-[1280px] mx-auto w-full px-6"
-        style={{ borderTop: '1px solid var(--footer-line, rgba(255,255,255,0.25))' }}
-      >
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pt-14 sm:pt-16">
         <motion.div
-          className="pt-12 sm:pt-14 pb-0 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_1fr_1fr_1.6fr] gap-y-12 md:gap-x-0"
+          className="grid grid-cols-1 gap-y-12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.4fr] lg:gap-x-8"
           {...containerAnimProps}
         >
-          {/* Brand column */}
+          {/* Brand + socials */}
           <motion.div
-            className="flex flex-col gap-5 md:pr-10"
-            variants={shouldReduceMotion ? {} : fadeUp}
+            className="flex flex-col gap-5"
+            variants={itemVariants}
             custom={0}
           >
             <Logo
@@ -136,103 +70,76 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               imgClassName="h-10 w-auto object-contain block"
             />
             <p
-              className="font-sans font-normal text-[13px] leading-relaxed"
-              style={{ color: 'var(--footer-muted, rgba(255,255,255,0.52))' }}
+              className="font-sans font-normal text-[13px] leading-relaxed max-w-[260px]"
+              style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
             >
-              Learn to code by building real projects with real people.
+              Building Africa&apos;s next generation of tech professionals —
+              together.
             </p>
+            <SocialLinks />
           </motion.div>
 
-          {/* Thin vertical divider — desktop only */}
-          <div
-            aria-hidden="true"
-            className="hidden md:block w-px self-stretch mx-10"
-            style={{ backgroundColor: 'var(--footer-line, rgba(255,255,255,0.25))' }}
-          />
-
-          {/* Navigation columns */}
+          {/* Link columns */}
           {FOOTER_COLUMNS.map((col, i) => (
             <motion.div
               key={col.id}
-              className="md:px-6 first:md:pl-0"
-              variants={shouldReduceMotion ? {} : fadeUp}
+              variants={itemVariants}
               custom={0.08 * (i + 1)}
             >
               <FooterColumn column={col} />
             </motion.div>
           ))}
 
-          {/* Follow us + Stay updated */}
-          <motion.div
-            className="flex flex-col gap-8 md:pl-8"
-            variants={shouldReduceMotion ? {} : fadeUp}
-            custom={0.32}
-          >
-            {/* Follow us */}
-            <div className="flex flex-col gap-5">
-              <h3
-                className="font-exo font-semibold text-[13px] uppercase tracking-[0.22em]"
-                style={{ color: 'var(--footer-label, #05FF3C)' }}
-              >
-                Follow Us
-              </h3>
-              <SocialLinks />
-            </div>
-
-            {/* Newsletter */}
+          {/* Newsletter */}
+          <motion.div variants={itemVariants} custom={0.32}>
             <FooterNewsletter />
           </motion.div>
         </motion.div>
       </div>
 
-      {/* ── D) BOTTOM BAR ─────────────────────────────────────────────────── */}
+      {/* Bottom bar */}
       <div
-        className="relative z-10 max-w-[1280px] mx-auto w-full px-6 mt-14"
+        className="relative z-10 mx-auto w-full max-w-[1280px] px-6"
         style={{ borderTop: '1px solid var(--footer-line, rgba(255,255,255,0.25))' }}
       >
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 py-7"
-          {...animProps(0.1)}
-        >
-          {/* Copyright */}
+        <div className="flex flex-col items-center justify-between gap-3 py-6 sm:flex-row sm:gap-4">
           <p
-            className="font-sans font-normal text-[15px] text-center sm:text-left"
+            className="font-sans font-normal text-[13px] text-center sm:text-left"
             style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
           >
-            © {year} Dev.wengi. All rights reserved.
+            © {year} DevWengi. All rights reserved.
           </p>
 
-          {/* Legal links */}
           <nav aria-label="Legal" className="flex items-center gap-1">
             {LEGAL_LINKS.map((link, i) => (
               <React.Fragment key={link.label}>
                 {i > 0 && (
                   <span
-                    className="font-sans text-[15px] select-none px-1"
+                    className="font-sans text-[13px] select-none px-1"
                     style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
                     aria-hidden="true"
                   >
                     ·
                   </span>
                 )}
-                <a
-                  href={link.href}
-                  className="font-sans font-normal text-[15px] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#000000)] rounded-sm"
+                <Link
+                  to={link.href}
+                  className="font-sans font-normal text-[13px] transition-colors duration-150 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#060A07)] rounded-sm"
                   style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.color = '#FFFFFF'
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.color =
-                      'var(--footer-muted, rgba(255,255,255,0.72))'
-                  }}
                 >
                   {link.label}
-                </a>
+                </Link>
               </React.Fragment>
             ))}
           </nav>
-        </motion.div>
+
+          <p
+            className="font-sans font-normal text-[13px] text-center sm:text-right"
+            style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
+          >
+            Built in Kisumu · Made for learning together
+          </p>
+        </div>
       </div>
     </footer>
   )

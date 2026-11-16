@@ -4,3 +4,9 @@ publish = "dist"
 
 [build.environment]
 NODE_VERSION = "22.12.0"
+
+# Single-page app fallback so client routes resolve on refresh.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

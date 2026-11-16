@@ -27,8 +27,14 @@ export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = 
         className="font-exo font-semibold text-[13px] uppercase tracking-[0.22em]"
         style={{ color: 'var(--footer-label, #05FF3C)' }}
       >
-        Stay Updated
+        Newsletter
       </h3>
+      <p
+        className="font-sans font-normal text-[13px] leading-relaxed"
+        style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
+      >
+        Keep up with community updates and learning resources.
+      </p>
 
       <AnimatePresence mode="wait">
         {isSuccess ? (

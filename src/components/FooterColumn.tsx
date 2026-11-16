@@ -7,6 +7,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import type { FooterColumn as FooterColumnData } from '../data/footer'
 
 export interface FooterColumnProps {
@@ -32,27 +33,50 @@ export const FooterColumn: React.FC<FooterColumnProps> = ({ column, className = 
 
       {/* Links */}
       <ul className="flex flex-col" style={{ gap: '14px' }} role="list">
-        {column.links.map((link) => (
-          <li key={link.id ?? link.label}>
-            <motion.a
-              href={link.href}
-              target={link.external ? '_blank' : undefined}
-              rel={link.external ? 'noopener noreferrer' : undefined}
-              className="group relative inline-flex items-center font-sans font-normal text-[18px] text-white transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#000000)] rounded-sm"
-              whileHover={{ x: 2 }}
-              transition={{ duration: 0.15 }}
-            >
-              {/* Slide-in underline */}
-              <span
-                className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full transition-all duration-200 ease-out"
-                style={{ backgroundColor: 'rgba(255,255,255,0.7)' }}
-                aria-hidden="true"
-              />
-              {link.label}
-            </motion.a>
-          </li>
-        ))}
+        {column.links.map((link) => {
+          const internal = link.href.startsWith('/') && !link.external
+          const className =
+            'group relative inline-flex items-center font-sans font-normal text-[16px] text-white transition-transform duration-200 hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#060A07)] rounded-sm'
+          const underline = (
+            <span
+              className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full transition-all duration-200 ease-out"
+              style={{ backgroundColor: 'rgba(255,255,255,0.7)' }}
+              aria-hidden="true"
+            />
+          )
+          return (
+            <li key={link.id ?? link.label}>
+              {internal ? (
+                <Link to={link.href} className={className}>
+                  {underline}
+                  {link.label}
+                </Link>
+              ) : (
+                <motion.a
+                  href={link.href}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
+                  className={className}
+                  whileHover={{ x: 2 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  {underline}
+                  {link.label}
+                </motion.a>
+              )}
+            </li>
+          )
+        })}
       </ul>
+
+      {column.note && (
+        <p
+          className="mt-5 font-sans font-normal text-[13px] leading-relaxed"
+          style={{ color: 'var(--footer-muted, rgba(255,255,255,0.72))' }}
+        >
+          {column.note}
+        </p>
+      )}
     </nav>
   )
 }

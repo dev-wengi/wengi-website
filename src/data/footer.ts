@@ -17,81 +17,46 @@ export interface FooterColumn {
   id: string
   heading: string
   links: FooterLink[]
+  note?: string
 }
 
 export const FOOTER_COLUMNS: FooterColumn[] = [
   {
-    id: 'learn',
-    heading: 'Learn',
+    id: 'platform',
+    heading: 'Platform',
     links: [
-      {
-        label: 'Frontend Track',
-        href: 'https://github.com/dev-wengi/dev-wengi/tree/main/tracks/frontend',
-        external: true,
-      },
-      {
-        label: 'Backend Track',
-        href: 'https://github.com/dev-wengi/dev-wengi/tree/main/tracks/backend',
-        external: true,
-      },
-      {
-        label: 'DevOps Track',
-        href: 'https://github.com/dev-wengi/dev-wengi/tree/main/tracks/devops',
-        external: true,
-      },
-      {
-        label: '30-Day Challenges',
-        href: 'https://github.com/dev-wengi/dev-wengi/tree/main/challenges/30-day-challenges',
-        external: true,
-      },
+      { label: 'Home', href: '/' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Resources', href: '/resources' },
     ],
   },
   {
-    id: 'build',
-    heading: 'Build',
+    id: 'community',
+    heading: 'Community',
     links: [
+      { label: 'Get Started', href: '/get-started' },
+      { label: 'Learning paths', href: '/#learning-paths' },
+      { label: 'Build in public', href: '/blog' },
       {
-        label: 'Community Projects',
-        href: 'https://github.com/dev-wengi/dev-wengi/tree/main/projects',
-        external: true,
-      },
-      {
-        label: 'Project Documentation',
-        href: 'https://github.com/dev-wengi/dev-wengi/tree/main/docs',
-        external: true,
-      },
-      {
-        label: 'Contribute to the Website',
-        href: 'https://github.com/dev-wengi/wengi-website',
-        external: true,
-      },
-      {
-        label: 'Getting Started',
+        label: 'Contribute',
         href: 'https://github.com/dev-wengi/dev-wengi',
         external: true,
       },
     ],
   },
   {
-    id: 'connect',
-    heading: 'Connect',
+    id: 'contact',
+    heading: 'Contact',
     links: [
+      { label: 'dev.wengi.ke@gmail.com', href: 'mailto:dev.wengi.ke@gmail.com' },
       {
-        label: 'GitHub Discussions',
-        href: 'https://github.com/dev-wengi/dev-wengi/discussions',
+        label: 'Lakebasin Mall, Kisumu',
+        href: 'https://maps.google.com/?q=Lakebasin+Mall,Kisumu,Kenya',
         external: true,
-      },
-      {
-        label: 'GitHub Repository',
-        href: 'https://github.com/dev-wengi/dev-wengi',
-        external: true,
-      },
-      { label: 'Discord', href: 'https://discord.com', external: true },
-      {
-        label: 'Newsletter',
-        href: '#newsletter',
       },
     ],
+    note: 'Local roots. A world of possibilities.',
   },
 ]
 
