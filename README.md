@@ -68,7 +68,7 @@ Built something?
 
 ### 1. Join the Community
 
-Jump into conversations, introduce yourself, and start engaging [here](https://discord.com).
+Jump into conversations, introduce yourself, and start engaging [here](https://discord.gg/bbeZwXM9z).
 
 ---
 
