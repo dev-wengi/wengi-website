@@ -6,7 +6,6 @@ import {
   BookOpen,
   GitBranch,
   Accessibility,
-  Figma,
   Atom,
   Compass,
   Code2,
@@ -275,7 +274,7 @@ export const REFERENCES: Reference[] = [
     url: 'https://help.figma.com',
     host: 'help.figma.com',
     tag: 'Design practice',
-    icon: Figma,
+    icon: PenTool,
   },
 ]
 
