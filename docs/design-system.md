@@ -28,18 +28,15 @@ reference link green (`#00AA25`, only 3.1:1) darkened to pass WCAG AA.
 | `--line-on-dark` | `rgba(255,255,255,.14)` | Borders on dark |
 | `--line-on-light` | `rgba(6,10,7,.12)` | Borders on light |
 
-Verified pairs: white text on brand fill 1.37:1 (fails WCAG —
-explicit product decision, see rule 2), brand on ink 14.6:1,
+Verified pairs: ink text on brand fill 14.6:1, brand on ink 14.6:1,
 brand-ink on white 5.3:1, brand-ink on mint 4.9:1.
 (Check script: `/tmp/contrast_v3.py`. Sampler: `/tmp/sample_tablet.py`.)
 
 ## Usage rules
 
 1. Never set small text in `--brand` on a light surface. Use `--brand-ink`.
-2. `--brand` fills pair with white text (explicit product decision).
-   Tradeoff: white on `#05FF3C` is 1.37:1 and fails WCAG — the reference
-   itself uses dark text on these fills. If readability complaints come in,
-   either revert to ink text or darken the fill.
+2. `--brand` fills always pair with ink/dark text, never white
+   (white on `#05FF3C` is 1.37:1; the reference uses dark text here too).
 3. `--pine` / `--pine-deep` are the only dark greens; no other green
    surfaces on dark backgrounds.
 4. `--brand-soft` mint is for tinted light surfaces, always with ink text.
