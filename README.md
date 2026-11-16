@@ -165,3 +165,20 @@ Dev-Wengi isn’t just a platform.
 It’s a mindset.
 
 A place where builders are made.
+
+---
+
+## Photo Credits
+
+Site photography is freely licensed via Wikimedia Commons:
+
+* Hero, community — Ruky Wunpini, CC BY 4.0 (Wiki Mentor Africa Tamale Hackathon 2025)
+* Pair programming — Kabren, CC BY-SA 3.0
+* Dashboard editor — Telmo E Silva, CC BY-SA 4.0
+* Data center — BalticServers.com, CC BY-SA 3.0
+* Whiteboard session — DERDAKI ILIAS, CC BY-SA 4.0 (WikiCamp Morocco 2026)
+* Programming code — Martin Vorel, CC BY-SA 4.0
+* Code on monitor — Markus Spiske, CC0
+* Texting group — Tomwsulcer, CC0
+* Server rack — Derrick Coetzee, CC0
+* Home office — Free-Photos, CC0

@@ -39,8 +39,8 @@ export const Hero: React.FC<HeroProps> = ({
   ctaText = 'Choose your learning path',
   ctaHref = '#learning-paths',
   onCtaClick,
-  heroImageSrc = 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=80',
-  heroImageAlt = 'Happy group of young diverse people in the Dev.wengi tech community outdoors',
+  heroImageSrc = '/images/hero.jpg',
+  heroImageAlt = 'Developers collaborating on laptops at a community hackathon',
   stats,
   className = '',
 }) => {

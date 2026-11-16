@@ -18,16 +18,16 @@ export interface VisionProps {
 const DEFAULT_VISION_FEATURES: VisionFeature[] = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Team of developers collaborating on laptops around a wooden table',
+    image: '/images/vision-collab.jpg',
+    imageAlt: 'Two developers pair programming at shared monitors',
     title: 'Follow a learning track',
     text: 'Choose Frontend, Backend, or DevOps, then work through levels with clear tasks and goals.',
     reverse: false,
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Group of young friends sitting together outdoors in a tech community',
+    image: '/images/vision-community.jpg',
+    imageAlt: 'Community members coding together at a hackathon',
     title: 'Build beyond the tutorial',
     text: 'Try one of 50 coding challenges or contribute to a real-world project. Share your work, get feedback, and improve with each iteration.',
     reverse: true,
