@@ -199,7 +199,7 @@ export const Projects: React.FC<ProjectsProps> = ({
           <button
             type="button"
             onClick={() => setShowAll((previous) => !previous)}
-            className="inline-flex items-center justify-center rounded-full px-8 py-3.5 font-exo text-[18px] font-semibold tracking-[0.02em] text-white transition-[transform,filter] duration-300 [transition-timing-function:cubic-bezier(0.2,0.7,0.2,1)] hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-2 sm:px-9 sm:py-4 sm:text-[20px]"
+            className="inline-flex items-center justify-center rounded-full px-8 py-3.5 font-exo text-[18px] font-semibold tracking-[0.02em] text-black transition-[transform,filter] duration-300 [transition-timing-function:cubic-bezier(0.2,0.7,0.2,1)] hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-2 sm:px-9 sm:py-4 sm:text-[20px]"
             style={{ backgroundColor: 'var(--green-highlight, #05FF3C)' }}
           >
             {showAll ? 'Show less' : 'See more projects'}

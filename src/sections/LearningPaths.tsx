@@ -175,7 +175,7 @@ export const LearningPaths: React.FC = () => {
           href="https://github.com/dev-wengi/dev-wengi/tree/main/challenges/30-day-challenges"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-full bg-[var(--green-highlight,#05FF3C)] px-6 font-sans text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black lg:self-center"
+          className="inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-full bg-[var(--green-highlight,#05FF3C)] px-6 font-sans text-sm font-bold text-black transition-all hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black lg:self-center"
         >
           Browse challenges
           <ArrowUpRight size={17} aria-hidden="true" />

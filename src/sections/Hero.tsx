@@ -146,7 +146,7 @@ export const Hero: React.FC<HeroProps> = ({
             <a
               href={ctaHref}
               onClick={onCtaClick}
-              className="inline-flex items-center justify-center font-exo font-semibold text-[18px] sm:text-[20px] tracking-[0.02em] text-white rounded-full px-8 sm:px-10 py-3.5 sm:py-4 transition-all duration-200 shadow-sm hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[0_10px_25px_rgba(5,255,60,0.4)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center font-exo font-semibold text-[18px] sm:text-[20px] tracking-[0.02em] text-black rounded-full px-8 sm:px-10 py-3.5 sm:py-4 transition-all duration-200 shadow-sm hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[0_10px_25px_rgba(5,255,60,0.4)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-2"
               style={{
                 backgroundColor: 'var(--green-highlight, #05FF3C)',
               }}

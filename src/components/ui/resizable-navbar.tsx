@@ -288,7 +288,7 @@ export const NavbarButton = ({
     gradient:
       'bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]',
     brand:
-      'rounded-full bg-[var(--brand)] px-7 py-2.5 font-exo text-[18px] font-semibold text-white shadow-none hover:bg-[var(--brand-hover)]',
+      'rounded-full bg-[var(--brand)] px-7 py-2.5 font-exo text-[18px] font-semibold text-[var(--ink)] shadow-none hover:bg-[var(--brand-hover)]',
   }
 
   return (

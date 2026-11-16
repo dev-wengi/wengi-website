@@ -98,7 +98,7 @@ export const FooterNewsletter: React.FC<FooterNewsletterProps> = ({ className = 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="h-[52px] px-[22px] font-sans font-bold text-[15px] text-white rounded-[10px] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#000000)] disabled:opacity-60 whitespace-nowrap"
+                className="h-[52px] px-[22px] font-sans font-bold text-[15px] text-black rounded-[10px] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--footer-blue,#000000)] disabled:opacity-60 whitespace-nowrap"
                 style={{ backgroundColor: 'var(--green-highlight, #05FF3C)' }}
                 onMouseEnter={(e) => {
                   if (isLoading) return

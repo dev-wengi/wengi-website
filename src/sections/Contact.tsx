@@ -158,7 +158,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             custom={0.2}
-            className="mt-8 inline-flex items-center gap-2 font-exo font-semibold text-white rounded-full px-10 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+            className="mt-8 inline-flex items-center gap-2 font-exo font-semibold text-black rounded-full px-10 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
             style={{
               backgroundColor: 'var(--green-highlight, #05FF3C)',
               letterSpacing: '0.02em',
@@ -339,7 +339,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                       <button
                         type="submit"
                         disabled={isLoading}
-                        className="h-[52px] inline-flex items-center justify-center font-exo font-semibold text-white rounded-full px-7 transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black hover:-translate-y-0.5 hover:brightness-95"
+                        className="h-[52px] inline-flex items-center justify-center font-exo font-semibold text-black rounded-full px-7 transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black hover:-translate-y-0.5 hover:brightness-95"
                         style={{
                           backgroundColor: 'var(--green-highlight, #05FF3C)',
                           letterSpacing: '0.02em',

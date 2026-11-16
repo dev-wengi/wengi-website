@@ -33,7 +33,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View ${project.title} live`}
-      className="absolute right-[14px] top-[14px] z-10 inline-flex items-center gap-1 rounded-full bg-[var(--green-live)] px-3 py-1.5 font-exo text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      className="absolute right-[14px] top-[14px] z-10 inline-flex items-center gap-1 rounded-full bg-[var(--green-live)] px-3 py-1.5 font-exo text-sm font-semibold text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
     >
       Live
       <ArrowUpRight size={14} aria-hidden="true" />
