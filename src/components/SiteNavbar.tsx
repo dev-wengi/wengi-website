@@ -43,49 +43,36 @@ export const SiteNavbar = () => {
   }, [isMobileMenuOpen])
 
   return (
-    <header
-      className={`pointer-events-none fixed inset-x-0 top-0 z-50 w-full motion-safe:transition-all motion-safe:duration-300 ${
-        scrolled
-          ? 'bg-white/85 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-md'
-          : 'bg-transparent'
-      }`}
-    >
+    <header className="pointer-events-none fixed inset-x-0 top-4 z-50 flex w-full justify-center px-4">
       <div
-        className={`pointer-events-auto relative mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 motion-safe:transition-all motion-safe:duration-300 sm:px-6 lg:px-8 ${
-          scrolled ? 'py-2' : 'py-4'
+        className={`pointer-events-auto relative flex w-fit max-w-[calc(100vw-2rem)] items-center gap-6 rounded-2xl border border-black/5 bg-white/85 px-4 motion-safe:transition-all motion-safe:duration-300 sm:px-5 lg:gap-10 ${
+          scrolled ? 'py-2 shadow-xl backdrop-blur-md' : 'py-3 shadow-lg backdrop-blur-md'
         }`}
       >
         <Link
           to="/"
           aria-label="Dev.wengi Home"
-          className="relative z-20 shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-[3px]"
+          className="relative z-20 shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-ink)] focus-visible:ring-offset-[3px]"
         >
           <Logo
             variant="stacked"
             imgClassName={`block w-auto object-contain motion-safe:transition-all motion-safe:duration-300 ${
-              scrolled ? 'h-9 sm:h-11' : 'h-12 sm:h-14'
+              scrolled ? 'h-9 sm:h-10' : 'h-11 sm:h-12'
             }`}
           />
         </Link>
 
-        <nav
-          aria-label="Primary"
-          className={`hidden items-center gap-1 rounded-full px-2 motion-safe:transition-all motion-safe:duration-300 lg:flex ${
-            scrolled
-              ? 'bg-[var(--ink,#060A07)]/90 py-1 shadow-2xl backdrop-blur-md'
-              : 'bg-[var(--ink,#060A07)]/70 py-1.5 shadow-lg backdrop-blur-sm'
-          }`}
-        >
+        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <NavLink
               key={item.name}
               to={item.link}
               end={item.link === '/'}
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 font-inter text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ink,#060A07)] ${
+                `rounded-full px-4 py-2 font-inter text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-ink)] ${
                   isActive
-                    ? 'text-[var(--brand,#05FF3C)]'
-                    : 'text-white hover:text-white/70'
+                    ? 'text-[var(--brand-ink,#007D1B)]'
+                    : 'text-neutral-800 hover:text-[var(--brand-ink,#007D1B)]'
                 }`
               }
             >
@@ -96,7 +83,7 @@ export const SiteNavbar = () => {
 
         <Link
           to={GET_STARTED_LINK}
-          className="relative z-20 hidden rounded-full bg-[var(--brand,#05FF3C)] px-7 py-2.5 font-exo text-[16px] font-semibold text-[var(--ink,#060A07)] transition-all hover:-translate-y-0.5 hover:bg-[var(--brand-hover,#04EB37)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-[3px] lg:inline-block"
+          className="relative z-20 hidden shrink-0 rounded-full bg-[var(--brand,#05FF3C)] px-7 py-2.5 font-exo text-[16px] font-semibold text-[var(--ink,#060A07)] transition-all hover:-translate-y-0.5 hover:bg-[var(--brand-hover,#04EB37)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-ink)] focus-visible:ring-offset-[3px] lg:inline-block"
         >
           Get started
         </Link>
@@ -107,9 +94,7 @@ export const SiteNavbar = () => {
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMobileMenuOpen}
           aria-controls={MOBILE_MENU_ID}
-          className={`relative z-20 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 font-inter text-[15px] font-semibold text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-[3px] motion-safe:transition-all motion-safe:duration-300 lg:hidden ${
-            scrolled ? 'py-2 shadow-xl' : 'py-2.5 shadow-lg'
-          }`}
+          className="relative z-20 inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--ink,#060A07)] px-5 py-2.5 font-inter text-[15px] font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-ink)] focus-visible:ring-offset-[3px] lg:hidden"
         >
           {isMobileMenuOpen ? (
             <X aria-hidden="true" size={18} />
@@ -127,11 +112,11 @@ export const SiteNavbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.18, ease: 'easeOut' }}
-              className="absolute inset-x-4 top-full z-50 sm:inset-x-6 lg:hidden"
+              className="absolute inset-x-0 top-[calc(100%+8px)] z-50 lg:hidden"
             >
               <nav
                 aria-label="Primary mobile"
-                className="flex w-full flex-col gap-1 rounded-2xl bg-white px-4 py-5 shadow-2xl"
+                className="flex w-full flex-col gap-1 rounded-2xl border border-black/5 bg-white px-4 py-5 shadow-2xl"
               >
                 {navItems.map((item) => (
                   <NavLink
@@ -139,7 +124,7 @@ export const SiteNavbar = () => {
                     to={item.link}
                     end={item.link === '/'}
                     className={({ isActive }) =>
-                      `rounded-md px-2 py-2.5 font-inter text-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] ${
+                      `rounded-md px-2 py-2.5 font-inter text-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-ink)] ${
                         isActive
                           ? 'text-[var(--brand-ink,#007D1B)]'
                           : 'text-[var(--text-black,#060A07)] hover:text-[var(--brand-ink,#007D1B)]'
@@ -151,7 +136,7 @@ export const SiteNavbar = () => {
                 ))}
                 <Link
                   to={GET_STARTED_LINK}
-                  className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand,#05FF3C)] px-7 py-3 text-center font-exo text-[16px] font-semibold text-[var(--ink,#060A07)] transition-colors hover:bg-[var(--brand-hover,#04EB37)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]"
+                  className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand,#05FF3C)] px-7 py-3 text-center font-exo text-[16px] font-semibold text-[var(--ink,#060A07)] transition-colors hover:bg-[var(--brand-hover,#04EB37)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-ink)]"
                 >
                   Get started
                 </Link>
