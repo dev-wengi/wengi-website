@@ -1,7 +1,6 @@
 import React from 'react'
 import { Hero } from '../sections/Hero'
 import { Vision } from '../sections/Vision'
-import { LearningPaths } from '../sections/LearningPaths'
 import { Projects } from '../sections/Projects'
 import { ProcessPath } from '../sections/ProcessPath'
 import { Faqs } from '../sections/Faqs'
@@ -15,7 +14,6 @@ export const Home: React.FC = () => {
     <>
       <Hero />
       <Vision />
-      <LearningPaths />
       <Projects />
       <ProcessPath />
       <Faqs />

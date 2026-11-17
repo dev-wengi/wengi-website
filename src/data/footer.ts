@@ -36,7 +36,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     heading: 'Community',
     links: [
       { label: 'Get Started', href: '/get-started' },
-      { label: 'Learning paths', href: '/#learning-paths' },
+      { label: 'Learning paths', href: '/resources' },
       { label: 'Build in public', href: '/blog' },
       {
         label: 'Contribute',

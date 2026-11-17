@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({
   headlinePart3 = 'with real people.',
   subtext = 'Follow a learning track, take on real-world projects and coding challenges, and grow through feedback from the community.',
   ctaText = 'Choose your learning path',
-  ctaHref = '#learning-paths',
+  ctaHref = '/resources',
   onCtaClick,
   heroImageSrc = '/images/hero.jpg',
   heroImageAlt = 'Developers collaborating on laptops at a community hackathon',

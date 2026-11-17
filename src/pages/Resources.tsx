@@ -280,7 +280,7 @@ export const Resources: React.FC = () => {
                   <div className="mt-4 border-t border-black/10 pt-4">
                     <p className="font-sans text-[13px] font-medium text-neutral-700">{path.outcome}</p>
                     <Link
-                      to="/#learning-paths"
+                      to="https://github.com/dev-wengi/dev-wengi/tree/main/tracks"
                       className="mt-2 inline-flex items-center gap-1.5 font-sans text-[14px] font-semibold text-[var(--brand-ink,#007D1B)] transition-colors hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-ink,#007D1B)]"
                     >
                       Explore this path
