@@ -22,7 +22,7 @@ const PhoneIcon: React.FC = () => (
   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
     <path
       d="M5.25 4.667h4.667l2.333 5.833-2.916 1.75c1.27 2.572 3.26 4.563 5.833 5.833l1.75-2.916 5.833 2.333v4.667C22.75 23.7 21.45 25 19.833 25 10.5 25 3 17.5 3 8.167 3 6.55 4.3 5.25 5.833 5.25H5.25z"
-      stroke="#0A0A0A"
+      stroke="#007D1B"
       strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -33,10 +33,10 @@ const PhoneIcon: React.FC = () => (
 /* ─── Email SVG icon ─────────────────────────────────────────────────────── */
 const EmailIcon: React.FC = () => (
   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-    <rect x="3" y="6" width="22" height="16" rx="2" stroke="#0A0A0A" strokeWidth="1.75" />
+    <rect x="3" y="6" width="22" height="16" rx="2" stroke="#007D1B" strokeWidth="1.75" />
     <path
       d="M3 8l11 8 11-8"
-      stroke="#0A0A0A"
+      stroke="#007D1B"
       strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -49,10 +49,10 @@ const LocationIcon: React.FC = () => (
   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
     <path
       d="M14 2.333C10.134 2.333 7 5.467 7 9.333c0 5.25 7 16.334 7 16.334s7-11.084 7-16.334c0-3.866-3.134-7-7-7z"
-      stroke="#0A0A0A"
+      stroke="#007D1B"
       strokeWidth="1.75"
     />
-    <circle cx="14" cy="9.333" r="2.333" stroke="#0A0A0A" strokeWidth="1.75" />
+    <circle cx="14" cy="9.333" r="2.333" stroke="#007D1B" strokeWidth="1.75" />
   </svg>
 )
 
@@ -186,7 +186,7 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
       >
         <div className="max-w-[1160px] mx-auto w-full px-6 py-14 sm:py-16">
           <motion.div
-            className="flex flex-col md:flex-row items-stretch justify-center gap-0 divide-y md:divide-y-0 md:divide-x divide-black/10"
+            className="flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-stretch sm:gap-0 sm:divide-x sm:divide-black/10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -200,18 +200,18 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
                 key={item.id}
                 variants={fadeUp}
                 custom={i * 0.1}
-                className="flex flex-col md:flex-row items-center md:items-start gap-5 flex-1 px-8 py-8 md:py-6 first:pl-0 last:pr-0"
+                className="flex flex-col items-center gap-4 flex-1 px-8 py-2 text-center sm:py-4 first:sm:pl-0 last:sm:pr-0"
               >
                 {/* Icon tile */}
                 <div
                   className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm"
-                  style={{ backgroundColor: 'var(--contact-icon-bg, #05FF3C)' }}
+                  style={{ backgroundColor: 'var(--brand-soft, #E8FBEA)' }}
                 >
                   {item.icon}
                 </div>
 
                 {/* Text */}
-                <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="flex flex-col items-center text-center">
                   <span
                     className="font-sans font-normal text-[13px] uppercase tracking-[0.08em] mb-1"
                     style={{ color: 'var(--text-muted-light, #8C8C8C)' }}
