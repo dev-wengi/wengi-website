@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Search, ArrowRight, ArrowUpRight, Check, Route } from 'lucide-react'
 import { usePageTitle } from '../components/ScrollManager'
-import { NewsletterCard } from '../components/NewsletterCard'
 import {
   RESOURCE_PATHS,
   PROJECT_BRIEFS,
@@ -483,12 +482,6 @@ export const Resources: React.FC = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="w-full bg-white px-4 py-20 sm:px-6">
-        <div className="mx-auto w-full max-w-[1160px]">
-          <NewsletterCard />
-        </div>
-      </section>
     </>
   )
 }

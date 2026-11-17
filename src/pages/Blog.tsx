@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowUpRight, SquarePen } from 'lucide-react'
 import { usePageTitle } from '../components/ScrollManager'
-import { NewsletterCard } from '../components/NewsletterCard'
 import { BLOG_FILTERS, BLOG_POSTS, FEATURED_POST, type BlogPost } from '../data/blog'
 import { CONTACT_EMAIL, DISCORD_INVITE } from '../data/resources'
 
@@ -315,12 +314,6 @@ export const Blog: React.FC = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="w-full bg-white px-4 py-20 sm:px-6">
-        <div className="mx-auto w-full max-w-[1160px]">
-          <NewsletterCard />
-        </div>
-      </section>
     </>
   )
 }
