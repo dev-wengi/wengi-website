@@ -252,26 +252,22 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
               border: '1px solid var(--card-border-gray, #9A9A9A)',
             }}
           >
-            {/* Watermark logo (faint) */}
+            {/* Watermark logos (faint tiled wordmarks) */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute right-0 bottom-0 select-none overflow-hidden rounded-br-3xl"
-              style={{ opacity: 'var(--watermark-opacity, 0.10)' }}
-            >
-              <span
-                className="font-headline font-extrabold text-white leading-none tracking-tight select-none"
-                style={{
-                  fontSize: 'clamp(80px, 14vw, 160px)',
-                  letterSpacing: '-0.04em',
-                  lineHeight: 0.85,
-                  display: 'block',
-                  paddingRight: '24px',
-                  paddingBottom: '8px',
-                }}
-              >
-                Dev.wengi
-              </span>
-            </div>
+              className="pointer-events-none absolute inset-0 select-none overflow-hidden rounded-3xl"
+              style={{
+                backgroundImage: 'url(/logo.png)',
+                backgroundRepeat: 'repeat',
+                backgroundSize: '220px auto',
+                backgroundPosition: 'center',
+                opacity: 0.07,
+                maskImage:
+                  'linear-gradient(115deg, transparent 15%, black 55%, black 85%, transparent 100%)',
+                WebkitMaskImage:
+                  'linear-gradient(115deg, transparent 15%, black 55%, black 85%, transparent 100%)',
+              }}
+            />
 
             {/* Card content */}
             <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10 px-8 sm:px-12 py-12 sm:py-14">
