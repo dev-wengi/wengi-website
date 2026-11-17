@@ -6,14 +6,23 @@ import { Logo } from './Logo'
 import { navItems, GET_STARTED_LINK } from '../data/nav'
 
 const MOBILE_MENU_ID = 'mobile-navigation-menu'
+const SCROLL_THRESHOLD = 100
 
 export const SiteNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     if (!isMobileMenuOpen) return
@@ -35,7 +44,11 @@ export const SiteNavbar = () => {
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 w-full">
-      <div className="pointer-events-auto relative mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div
+        className={`pointer-events-auto relative mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 motion-safe:transition-all motion-safe:duration-300 sm:px-6 lg:px-8 ${
+          scrolled ? 'py-2' : 'py-4'
+        }`}
+      >
         <Link
           to="/"
           aria-label="Dev.wengi Home"
@@ -43,13 +56,19 @@ export const SiteNavbar = () => {
         >
           <Logo
             variant="stacked"
-            imgClassName="block h-12 w-auto object-contain sm:h-14"
+            imgClassName={`block w-auto object-contain motion-safe:transition-all motion-safe:duration-300 ${
+              scrolled ? 'h-9 sm:h-11' : 'h-12 sm:h-14'
+            }`}
           />
         </Link>
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-1 rounded-full bg-[var(--ink,#060A07)]/90 px-2 py-1.5 shadow-lg backdrop-blur lg:flex"
+          className={`hidden items-center gap-1 rounded-full px-2 motion-safe:transition-all motion-safe:duration-300 lg:flex ${
+            scrolled
+              ? 'bg-[var(--ink,#060A07)]/90 py-1 shadow-2xl backdrop-blur-md'
+              : 'bg-[var(--ink,#060A07)]/70 py-1.5 shadow-lg backdrop-blur-sm'
+          }`}
         >
           {navItems.map((item) => (
             <NavLink
@@ -82,7 +101,9 @@ export const SiteNavbar = () => {
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMobileMenuOpen}
           aria-controls={MOBILE_MENU_ID}
-          className="relative z-20 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2.5 font-inter text-[15px] font-semibold text-black shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-[3px] lg:hidden"
+          className={`relative z-20 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 font-inter text-[15px] font-semibold text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-[3px] motion-safe:transition-all motion-safe:duration-300 lg:hidden ${
+            scrolled ? 'py-2 shadow-xl' : 'py-2.5 shadow-lg'
+          }`}
         >
           {isMobileMenuOpen ? (
             <X aria-hidden="true" size={18} />
