@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, type Variants } from 'framer-motion'
 import { FaqItem } from '../components/FaqItem'
 import { FAQS_DATA, type Faq } from '../data/faqs'
@@ -13,19 +14,16 @@ export interface FaqsProps {
  * - Full-width pure black background (#000000)
  * - Centered header with H2 "F.A.Qs" and 14px subtext
  * - Big typographic numbered items ("1.", "2.", "3.", "4." with white circle dot)
- * - Accordion behavior (Item 4 open by default to match screenshot)
- * - "See more questions" wide pill button revealing extra items
+ * - Accordion behavior, all closed by default
+ * - "See more questions" pill button linking to the dedicated Q&A page
  */
 export const Faqs: React.FC<FaqsProps> = ({
   initialFaqs = FAQS_DATA,
   className = '',
 }) => {
-  // Item 4 is open by default to match the reference screenshot
-  const [openId, setOpenId] = useState<number | null>(4)
-  const [showAll, setShowAll] = useState<boolean>(false)
+  const [openId, setOpenId] = useState<number | null>(null)
 
-  // Initial 4 items vs full 8 items
-  const displayedFaqs = showAll ? initialFaqs : initialFaqs.slice(0, 4)
+  const displayedFaqs = initialFaqs.slice(0, 4)
 
   const handleToggle = (id: number) => {
     setOpenId((prev) => (prev === id ? null : id))
@@ -58,7 +56,7 @@ export const Faqs: React.FC<FaqsProps> = ({
       id="faqs"
       aria-labelledby="faqs-heading"
       className={`w-full scroll-mt-24 pt-16 pb-20 px-6 overflow-hidden ${className}`}
-      style={{ backgroundColor: 'var(--bg-black, #000000)' }}
+      style={{ backgroundColor: 'var(--bg-black, #060A07)' }}
     >
       <div className="max-w-[940px] mx-auto w-full">
         {/* Header Block, Centered */}
@@ -99,27 +97,24 @@ export const Faqs: React.FC<FaqsProps> = ({
           ))}
         </motion.div>
 
-        {/* "See more questions" Wide Pill Button (60px gap below list) */}
-        {initialFaqs.length > 4 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-            className="mt-14 sm:mt-16 flex justify-center w-full"
+        {/* "See more questions" pill button linking to the Q&A page */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+          className="mt-14 sm:mt-16 flex justify-center w-full"
+        >
+          <Link
+            to="/faqs"
+            className="w-full sm:w-auto max-w-[340px] sm:max-w-none inline-flex items-center justify-center font-exo font-semibold text-[18px] sm:text-[20px] tracking-[0.02em] text-black rounded-full px-12 sm:px-[70px] py-4 sm:py-[18px] transition-all duration-200 shadow-sm hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[0_8px_30px_rgba(5,255,60,0.4)] active:translate-y-0 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+            style={{
+              backgroundColor: 'var(--green-highlight, #05FF3C)',
+            }}
           >
-            <button
-              type="button"
-              onClick={() => setShowAll((prev) => !prev)}
-              className="w-full sm:w-auto max-w-[340px] sm:max-w-none inline-flex items-center justify-center font-exo font-semibold text-[18px] sm:text-[20px] tracking-[0.02em] text-black rounded-full px-12 sm:px-[70px] py-4 sm:py-[18px] transition-all duration-200 shadow-sm hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[0_8px_30px_rgba(5,255,60,0.4)] active:translate-y-0 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
-              style={{
-                backgroundColor: 'var(--green-highlight, #05FF3C)',
-              }}
-            >
-              {showAll ? 'Show fewer questions' : 'See more questions'}
-            </button>
-          </motion.div>
-        )}
+            See more questions
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

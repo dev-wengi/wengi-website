@@ -94,10 +94,7 @@ export const FaqItem: React.FC<FaqItemProps> = ({
             transition={{ duration: 0.35, ease: 'easeInOut' }}
             className="overflow-hidden ml-0 sm:ml-[100px] lg:ml-[130px] max-w-[780px]"
           >
-            <div
-              className="mt-3 sm:mt-4 p-4 sm:p-[16px_18px] rounded-[4px] border-[1.5px] text-white font-sans font-medium text-[15px] sm:text-[18px] leading-[1.2] bg-transparent shadow-[0_0_20px_rgba(5,255,60,0.15)]"
-              style={{ borderColor: 'var(--faq-border, #05FF3C)' }}
-            >
+            <div className="mt-3 sm:mt-4 max-w-[680px] font-sans font-normal text-[15px] sm:text-[17px] leading-relaxed text-white/60">
               {faq.answer}
             </div>
           </motion.div>
