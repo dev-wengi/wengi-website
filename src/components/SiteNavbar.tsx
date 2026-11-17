@@ -43,7 +43,13 @@ export const SiteNavbar = () => {
   }, [isMobileMenuOpen])
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 w-full">
+    <header
+      className={`pointer-events-none fixed inset-x-0 top-0 z-50 w-full motion-safe:transition-all motion-safe:duration-300 ${
+        scrolled
+          ? 'bg-white/85 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-md'
+          : 'bg-transparent'
+      }`}
+    >
       <div
         className={`pointer-events-auto relative mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 motion-safe:transition-all motion-safe:duration-300 sm:px-6 lg:px-8 ${
           scrolled ? 'py-2' : 'py-4'
