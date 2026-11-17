@@ -13,6 +13,7 @@ export const PROCESS_STEPS: ProcessStepData[] = [
     title: 'Choose something to build',
     description:
       'Pick a learning track, a coding challenge, or a community project.',
+    note: 'start anywhere',
   },
   {
     id: 'make',
@@ -28,6 +29,7 @@ export const PROCESS_STEPS: ProcessStepData[] = [
     title: 'Share your work',
     description:
       'For a track task or project contribution, open a pull request for review.',
+    note: 'show your work',
   },
   {
     id: 'iterate',

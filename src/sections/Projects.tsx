@@ -205,14 +205,6 @@ export const Projects: React.FC<ProjectsProps> = ({
             {showAll ? 'Show less' : 'See more projects'}
           </button>
         )}
-        <a
-          href="https://github.com/dev-wengi/dev-wengi/tree/main/projects"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-sm font-sans text-[16px] font-semibold text-black underline decoration-[var(--green-highlight,#05FF3C)] decoration-2 underline-offset-4 transition-colors hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green-highlight,#05FF3C)]"
-        >
-          Browse all project repositories on GitHub
-        </a>
       </div>
     </section>
   )
